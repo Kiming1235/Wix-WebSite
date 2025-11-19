@@ -253,20 +253,7 @@ export default function HomePage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  {strength.iconImage ? (
-                    <div className="mb-6">
-                      <Image
-                        src={strength.iconImage}
-                        alt={strength.title || '강점 아이콘'}
-                        className="w-20 h-20 mx-auto object-contain"
-                        width={80}
-                      />
-                    </div>
-                  ) : (
-                    <div className="mb-6">
-                      <IconComponent className="w-16 h-16 mx-auto text-primary" />
-                    </div>
-                  )}
+
                   <h3 className="text-2xl font-heading font-semibold mb-4">
                     {strength.title || defaultStrengths[index]?.title}
                   </h3>
