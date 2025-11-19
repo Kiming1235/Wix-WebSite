@@ -89,10 +89,18 @@ export default function HomePage() {
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            src="https://static.wixstatic.com/media/6820d4_25f1507fa06d4d2f910f93c63873a9ca~mv2.png?originWidth=1920&originHeight=1024"
+            alt="대한카고크레인 작업 현장"
+            className="w-full h-full object-cover"
+            width={1920}
+          />
+        </div>
         <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-background via-dark-gray to-background z-0"
+          className="absolute inset-0 bg-black z-0"
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1 } }}
+          animate={{ opacity: 0.5, transition: { duration: 1 } }}
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
           <motion.h1
