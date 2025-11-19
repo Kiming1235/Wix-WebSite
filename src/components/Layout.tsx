@@ -10,7 +10,6 @@ export default function Layout() {
 
   const navigation = [
     { name: '홈', href: '/' },
-    { name: '서비스', href: '/services' },
     { name: '연락처', href: '/contact' },
   ];
 

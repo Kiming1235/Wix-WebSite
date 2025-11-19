@@ -117,16 +117,7 @@ export default function HomePage() {
           >
             믿을 수 있는 중량물 운송 및 장비 연계 서비스
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.8 } }}
-          >
-            <Link to="/services">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
-                서비스 보기
-              </Button>
-            </Link>
-          </motion.div>
+
         </div>
       </section>
       {/* Company Introduction */}
@@ -210,19 +201,7 @@ export default function HomePage() {
             })}
           </div>
 
-          <motion.div
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <Link to="/services">
-              <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                모든 서비스 보기
-              </Button>
-            </Link>
-          </motion.div>
+
         </div>
       </section>
       {/* Company Strengths */}
