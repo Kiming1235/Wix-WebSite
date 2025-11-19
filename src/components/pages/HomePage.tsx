@@ -233,7 +233,7 @@ export default function HomePage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <Card className="bg-background border-secondary/20 hover:border-primary/50 transition-colors h-full">
+                  <Card className="bg-dark-gray border-secondary/20 hover:border-primary/50 transition-colors h-full">
                     <CardContent className="p-6 text-center">
                       <div className="mb-6">
                         <Image
