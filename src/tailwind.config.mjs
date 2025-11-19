@@ -23,16 +23,17 @@ export default {
                 paragraph: "roboto"
             },
             colors: {
-                'light-gray': '#E2E8F0',
-                'dark-gray': '#334155',
-                destructive: '#DC2626',
-                'destructive-foreground': '#FFFFFF',
-                background: '#1E293B',
-                secondary: '#64748B',
-                foreground: '#FFFFFF',
-                'secondary-foreground': '#FFFFFF',
-                'primary-foreground': '#1E293B',
-                primary: '#FFFFFF'
+                primary: "#FFFFFF",
+                "primary-foreground": "#1E293B",
+                secondary: "#64748B",
+                "secondary-foreground": "#FFFFFF",
+                background: "#1E293B",
+                "light-gray": "#E2E8F0",
+                "dark-gray": "#334155",
+                destructive: "#DC2626",
+                "destructive-foreground": "#FFFFFF",
+                foreground: "#FFFFFF",
+                "color-11": "transparent"
             },
         },
     },

@@ -122,7 +122,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Company Introduction */}
       <section className="py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
@@ -146,7 +145,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Main Services */}
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -218,7 +216,6 @@ export default function HomePage() {
           </motion.div>
         </div>
       </section>
-
       {/* Company Strengths */}
       <section className="py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
@@ -273,7 +270,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* Contact Section */}
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -298,7 +294,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Phone className="w-12 h-12 mx-auto text-primary mb-4" />
+              <Phone className="w-12 h-12 mx-auto text-primary mb-4 fill-color-11" />
               <h3 className="text-xl font-heading font-semibold mb-2">전화 문의</h3>
               <a 
                 href="tel:010-0000-0000" 
