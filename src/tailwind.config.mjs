@@ -19,8 +19,10 @@ export default {
                 '9xl': ['8rem', { lineHeight: '1', letterSpacing: '-0.025em', fontWeight: '900' }],
             },
             fontFamily: {
-                heading: "roboto-bold",
-                paragraph: "roboto"
+                heading: ["roboto-bold"],
+                paragraph: ["roboto"],
+                cinzel: ["cinzel", "serif"],
+                roboto: ["roboto", "sans-serif"]
             },
             colors: {
                 primary: "#FFFFFF",
