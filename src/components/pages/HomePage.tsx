@@ -222,33 +222,36 @@ export default function HomePage() {
               return (
                 <motion.div
                   key={strength._id || index}
-                  className="text-center"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className="mb-6">
-                    <Image
-                      src={(() => {
-                        const providedImages = [
-                          'https://static.wixstatic.com/media/6820d4_85d12eef1b2e4ef2bc301c5dac2433fa~mv2.png',
-                          'https://static.wixstatic.com/media/6820d4_0ea4fc30b5a44fa38bfee471295e4b81~mv2.png',
-                          'https://static.wixstatic.com/media/6820d4_e2bfc3695552481a9f0815e62b09bc51~mv2.png'
-                        ];
-                        return providedImages[index] || strength.iconImage || 'https://static.wixstatic.com/media/6820d4_c07bcbd2a534420dae7f7da5d9f59354~mv2.png?originWidth=128&originHeight=128';
-                      })()}
-                      alt={strength.title || defaultStrengths[index]?.title || '강점 아이콘'}
-                      className="w-20 h-20 mx-auto object-contain"
-                      width={80}
-                    />
-                  </div>
-                  <h3 className="text-2xl font-heading font-semibold mb-4">
-                    {strength.title || defaultStrengths[index]?.title}
-                  </h3>
-                  <p className="font-paragraph text-secondary-foreground text-lg">
-                    {strength.shortDescription || strength.detailedDescription || defaultStrengths[index]?.description}
-                  </p>
+                  <Card className="bg-background border-secondary/20 hover:border-primary/50 transition-colors h-full">
+                    <CardContent className="p-6 text-center">
+                      <div className="mb-6">
+                        <Image
+                          src={(() => {
+                            const providedImages = [
+                              'https://static.wixstatic.com/media/6820d4_85d12eef1b2e4ef2bc301c5dac2433fa~mv2.png',
+                              'https://static.wixstatic.com/media/6820d4_0ea4fc30b5a44fa38bfee471295e4b81~mv2.png',
+                              'https://static.wixstatic.com/media/6820d4_e2bfc3695552481a9f0815e62b09bc51~mv2.png'
+                            ];
+                            return providedImages[index] || strength.iconImage || 'https://static.wixstatic.com/media/6820d4_c07bcbd2a534420dae7f7da5d9f59354~mv2.png?originWidth=128&originHeight=128';
+                          })()}
+                          alt={strength.title || defaultStrengths[index]?.title || '강점 아이콘'}
+                          className="w-20 h-20 mx-auto object-contain"
+                          width={80}
+                        />
+                      </div>
+                      <h3 className="text-2xl font-heading font-semibold mb-4">
+                        {strength.title || defaultStrengths[index]?.title}
+                      </h3>
+                      <p className="font-paragraph text-secondary-foreground text-lg">
+                        {strength.shortDescription || strength.detailedDescription || defaultStrengths[index]?.description}
+                      </p>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
