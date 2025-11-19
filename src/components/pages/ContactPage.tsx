@@ -187,18 +187,13 @@ export default function ContactPage() {
               프로젝트 규모와 상관없이 최적의 솔루션을 제안해드립니다. 
               무료 견적 상담을 통해 정확한 비용과 일정을 확인하세요.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <a href="tel:010-0000-0000">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   <Phone className="w-5 h-5 mr-2" />
                   지금 전화하기
                 </Button>
               </a>
-              <Link to="/services">
-                <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  서비스 보기
-                </Button>
-              </Link>
             </div>
           </motion.div>
         </div>
