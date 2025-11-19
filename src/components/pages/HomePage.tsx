@@ -181,6 +181,22 @@ export default function HomePage() {
                 >
                   <Card className="bg-background border-secondary/20 hover:border-primary/50 transition-colors h-full">
                     <CardContent className="p-6 text-center">
+                      <div className="mb-4">
+                        <Image
+                          src={(() => {
+                            const providedImages = [
+                              'https://static.wixstatic.com/media/6820d4_9d1871c95c094a8183560db136be62d8~mv2.png',
+                              'https://static.wixstatic.com/media/6820d4_f2e0c7582196418a9762d50bafbce630~mv2.png',
+                              'https://static.wixstatic.com/media/6820d4_69cc42045f66443da1ab80d83447cc7b~mv2.png',
+                              'https://static.wixstatic.com/media/6820d4_f7cd85d436394680a31c4ed9fcf1d5ab~mv2.png'
+                            ];
+                            return providedImages[index] || service.image || defaultServices[index]?.image || 'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=default-service-icon';
+                          })()}
+                          alt={service.title || defaultServices[index]?.title || '서비스 이미지'}
+                          className="w-16 h-16 mx-auto object-contain"
+                          width={64}
+                        />
+                      </div>
                       <h3 className="text-xl font-heading font-semibold mb-3">
                         {service.title || defaultServices[index]?.title}
                       </h3>
