@@ -152,7 +152,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-heading font-bold mb-6">주요 서비스</h2>
-            <p className="text-lg font-paragraph text-secondary-foreground">
+            <p className="text-lg font-paragraph text-secondary-foreground whitespace-nowrap">
               전문적이고 신뢰할 수 있는 운송 솔루션을 제공합니다
             </p>
           </motion.div>
