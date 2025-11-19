@@ -22,7 +22,10 @@ export default {
                 heading: ["roboto-bold"],
                 paragraph: ["roboto"],
                 cinzel: ["cinzel", "serif"],
-                roboto: ["roboto", "sans-serif"]
+                roboto: ["roboto", "sans-serif"],
+                "noticia-text": ["noticia text", "serif"],
+                caveat: ["caveat", "cursive"],
+                "geotica-w01-four-open": ["geotica-w01-four-open", "fantasy"]
             },
             colors: {
                 primary: "#FFFFFF",

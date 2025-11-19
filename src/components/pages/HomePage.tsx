@@ -111,7 +111,7 @@ export default function HomePage() {
             대한카고크레인
           </motion.h1>
           <motion.p
-            className="text-white mb-8 font-bold text-lg font-roboto"
+            className="text-white mb-8 font-bold text-lg font-geotica-w01-four-open"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
             dir="ltr">{"믿을 수 있는 중량물 운송 및 장비 연계 서비스"}</motion.p>
