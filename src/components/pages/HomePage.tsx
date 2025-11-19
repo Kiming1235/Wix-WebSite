@@ -38,7 +38,7 @@ export default function HomePage() {
     {
       title: '중량물 운송',
       description: '대형 중량물의 안전하고 신속한 운송 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_ebef669055944be09dc5c3db7dead44a~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_188782e3cc7949469b1caf42912a726b~mv2.png',
       icon: Truck
     },
     {
