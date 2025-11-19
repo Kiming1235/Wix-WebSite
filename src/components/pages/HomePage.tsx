@@ -111,7 +111,7 @@ export default function HomePage() {
             대한카고크레인
           </motion.h1>
           <motion.p
-            className="text-2xl font-paragraph text-white mb-8"
+            className="text-xl font-paragraph text-white mb-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
           >
