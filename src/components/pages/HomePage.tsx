@@ -38,25 +38,25 @@ export default function HomePage() {
     {
       title: '중량물 운송',
       description: '대형 중량물의 안전하고 신속한 운송 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_188782e3cc7949469b1caf42912a726b~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=truck-transport-icon',
       icon: Truck
     },
     {
       title: '자재 운반',
       description: '건설 현장 자재의 효율적인 운반 솔루션',
-      image: 'https://static.wixstatic.com/media/6820d4_11181c3b812a4a8da75a7f842e015ba9~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_41869dc2ff1e46309c274d78f621442b~mv2.png?id=material-transport-icon',
       icon: Package
     },
     {
       title: '장비·설비 이전',
       description: '산업 장비 및 설비의 전문적인 이전 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_cdb85c16a4b0494085b50da8bc740180~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_a7fc09449ff5488ca3ca62843afc17c4~mv2.png?id=equipment-relocation-icon',
       icon: Building
     },
     {
       title: '장비 연계 운송 지원',
       description: '다양한 장비 연계를 통한 맞춤형 운송 지원',
-      image: 'https://static.wixstatic.com/media/6820d4_aa23ac23b83d44cab003a745707b7728~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_be75efdbf12a4da1af625e1c1b22f06c~mv2.png?id=equipment-support-icon',
       icon: Wrench
     }
   ];
