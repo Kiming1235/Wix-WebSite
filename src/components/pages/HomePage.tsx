@@ -38,7 +38,7 @@ export default function HomePage() {
     {
       title: '중량물 운송',
       description: '대형 중량물의 안전하고 신속한 운송 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_ec73d53691cc409ab86a6b81fdda104f~mv2.png',
+      image: 'https://static.wixstatic.com/media/6820d4_ebef669055944be09dc5c3db7dead44a~mv2.png',
       icon: Truck
     },
     {
@@ -65,16 +65,19 @@ export default function HomePage() {
     {
       title: '안전 우선',
       description: '모든 작업에서 안전을 최우선으로 하는 시스템',
+      iconImage: 'https://static.wixstatic.com/media/6820d4_cdb85c16a4b0494085b50da8bc740180~mv2.png',
       icon: Shield
     },
     {
       title: '일정 준수',
       description: '약속된 일정을 철저히 지키는 신뢰성',
+      iconImage: 'https://static.wixstatic.com/media/6820d4_ec73d53691cc409ab86a6b81fdda104f~mv2.png',
       icon: Clock
     },
     {
       title: '현장 맞춤 대응력',
       description: '각 현장의 특성에 맞는 최적화된 솔루션 제공',
+      iconImage: 'https://static.wixstatic.com/media/6820d4_11181c3b812a4a8da75a7f842e015ba9~mv2.png',
       icon: Target
     }
   ];
