@@ -117,9 +117,11 @@ export default function HomePage() {
             dir="ltr">{"믿을 수 있는 중량물 운송 및 장비 연계 서비스"}</motion.p>
 
         </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none z-20"></div>
       </section>
       {/* Company Introduction */}
-      <section className="py-24 px-6">
+      <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -140,9 +142,11 @@ export default function HomePage() {
             </div>
           </motion.div>
         </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
       {/* Main Services */}
-      <section className="py-24 px-6 bg-dark-gray">
+      <section className="relative py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -199,9 +203,11 @@ export default function HomePage() {
 
 
         </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
       {/* Company Strengths */}
-      <section className="py-24 px-6">
+      <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -257,6 +263,8 @@ export default function HomePage() {
             })}
           </div>
         </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
       {/* Contact Section */}
       <section className="py-24 px-6 bg-dark-gray">
