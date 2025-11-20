@@ -104,7 +104,7 @@ export default function HomePage() {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
           <motion.h1
-            className="text-7xl font-heading font-bold text-white mb-6 whitespace-nowrap"
+            className="font-heading font-bold text-white mb-6 whitespace-nowrap text-7xl"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }}
           >
