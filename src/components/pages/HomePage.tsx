@@ -104,14 +104,14 @@ export default function HomePage() {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
           <motion.h1
-            className="font-heading font-bold text-white mb-6 whitespace-nowrap text-5xl md:text-7xl"
+            className="font-heading font-bold text-white mb-6  text-5xl md:text-7xl"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }}
           >
             대한카고크레인
           </motion.h1>
           <motion.p
-            className="text-white mb-8 text-lg font-geotica-w01-four-open font-normal whitespace-nowrap"
+            className="text-white mb-8 text-lg font-geotica-w01-four-open font-normal "
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
             dir="ltr">{"믿을 수 있는 중량물 운송 및 장비 연계 서비스"}</motion.p>
@@ -136,7 +136,7 @@ export default function HomePage() {
                 className="text-secondary-foreground mb-6 writing-mode-vertical-rl writing-mode-horizontal-tb indent-0.5 normal-case not-italic no-underline text-center font-bold text-xl font-heading"
                 dir="ltr">{"대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다."}</p>
               <p className="font-paragraph text-secondary-foreground text-base">
-              {"각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다."}</p>
+              {"각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해<br />고객의 성공적인 프로젝트 완수를 지원합니다."}</p>
             </div>
           </motion.div>
         </div>
