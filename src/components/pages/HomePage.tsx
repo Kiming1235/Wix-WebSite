@@ -104,14 +104,14 @@ export default function HomePage() {
         />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10">
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 whitespace-nowrap"
+            className="text-7xl font-heading font-bold text-white mb-6"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }}
           >
             대한카고크레인
           </motion.h1>
           <motion.p
-            className="text-white mb-8 text-lg font-geotica-w01-four-open font-normal whitespace-nowrap"
+            className="text-white mb-8 text-lg font-geotica-w01-four-open font-normal"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
             dir="ltr">{"믿을 수 있는 중량물 운송 및 장비 연계 서비스"}</motion.p>
@@ -155,7 +155,7 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-heading font-bold mb-6">주요 서비스</h2>
-            <p className="text-lg font-paragraph text-secondary-foreground whitespace-nowrap mx-auto text-center">{"전문적이고 신뢰할 수 있는 운송 솔루션을 제공"}</p>
+            <p className="text-lg font-paragraph text-secondary-foreground mx-auto text-center">{"전문적이고 신뢰할 수 있는 운송 솔루션을 제공"}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
