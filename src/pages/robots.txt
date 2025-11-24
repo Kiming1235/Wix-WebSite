@@ -1,29 +1,46 @@
-# Robots.txt for 대한카고크레인
-# Allow all search engines to crawl the site
+# Robots.txt - SEO Configuration
+# This file controls search engine crawler access to your website
 
+# Default rules for all search engines
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /private
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
 Disallow: /*.json$
 Disallow: /*.xml$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+Crawl-delay: 1
+Request-rate: 1/1s
 
-# Specific rules for major search engines
+# Google-specific rules
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
+Request-rate: unlimited
 
+# Bing-specific rules
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+Request-rate: 1/1s
 
-User-agent: Yeti
+# Yandex-specific rules
+User-agent: YandexBot
 Allow: /
-Crawl-delay: 0
+Crawl-delay: 1
 
-User-agent: NaverBot
+# Baidu-specific rules
+User-agent: Baiduspider
 Allow: /
-Crawl-delay: 0
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+User-agent: SemrushBot
+User-agent: DotBot
+Disallow: /
 
 # Sitemap location
-Sitemap: https://www.daehancargocranes.com/sitemap.xml
+Sitemap: /sitemap.xml
