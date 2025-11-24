@@ -144,8 +144,8 @@ export default function Layout() {
               <div className="space-y-2 font-paragraph text-secondary-foreground">
                 <p>
                   <span className="text-foreground">전화:</span>{' '}
-                  <a href="tel:010-0000-0000" className="text-primary hover:text-primary/80">
-                    010-0000-0000
+                  <a href="tel:010-2332-4822" className="text-primary hover:text-primary/80">
+                    010-2332-4822
                   </a>
                 </p>
                 <p>
@@ -156,7 +156,11 @@ export default function Layout() {
                 </p>
                 <p>
                   <span className="text-foreground">주소:</span><br />
-                  서울특별시 강남구 테헤란로 123
+                  대구광역시 동구 신암남로 145(신암동)
+                </p>
+                <p>
+                  <span className="text-foreground">사업자번호:</span>{' '}
+                  141-22-02126
                 </p>
               </div>
             </div>
