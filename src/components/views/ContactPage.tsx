@@ -5,8 +5,10 @@ import { Phone, MapPin, Clock, Mail, ArrowLeft } from 'lucide-react';
 
 export default function ContactPage() {
   const handleMapClick = () => {
-    // 네이버 지도로 연결
-    window.open('https://map.naver.com/p/entry/place/1343980670?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511240941&locale=ko&svcName=map_pcv5', '_blank');
+    // 네이버 지도로 연결 - only runs on client side
+    if (typeof window !== 'undefined') {
+      window.open('https://map.naver.com/p/entry/place/1343980670?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511240941&locale=ko&svcName=map_pcv5', '_blank');
+    }
   };
 
   return (
