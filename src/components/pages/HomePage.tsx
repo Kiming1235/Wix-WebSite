@@ -37,6 +37,10 @@ export default function HomePage() {
     {
       src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg',
       alt: '대한카고크레인 작업 현장 6'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 7'
     }
   ];
 
