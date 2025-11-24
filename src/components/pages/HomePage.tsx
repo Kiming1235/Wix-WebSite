@@ -306,10 +306,15 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <MapPin className="w-12 h-12 mx-auto text-primary mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-2">사업장 주소</h3>
-              <p className="text-base font-paragraph text-primary">
+              <h3 className="text-xl font-heading font-semibold mb-2">위치</h3>
+              <p className="text-base font-paragraph text-primary mb-4">
                 대구광역시 동구 신암남로 145<br />(신암동)
               </p>
+              <Link to="/contact">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                  위치보기
+                </Button>
+              </Link>
             </motion.div>
           </div>
         </div>
