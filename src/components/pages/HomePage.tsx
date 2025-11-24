@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin } from 'lucide-react';
+import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
@@ -11,6 +11,34 @@ import { useEffect, useState } from 'react';
 export default function HomePage() {
   const [services, setServices] = useState<Services[]>([]);
   const [strengths, setStrengths] = useState<CompanyStrengths[]>([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const galleryImages = [
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 1'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a7c6fd8325564b148b6da8f30ebb37be~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 2'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a82e1c0f6008438da039f08ba1155f90~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 3'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_658942be47c843f09ee467b874a84f09~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 4'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 5'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 6'
+    }
+  ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,6 +113,14 @@ export default function HomePage() {
   const displayServices = services.length > 0 ? services : defaultServices;
   const displayStrengths = strengths.length > 0 ? strengths : defaultStrengths;
 
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
@@ -142,6 +178,88 @@ export default function HomePage() {
         </div>
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
+      </section>
+      {/* Gallery Section */}
+      <section className="relative py-24 px-6 bg-dark-gray">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-heading font-bold mb-6">현장 갤러리</h2>
+            <p className="text-lg font-paragraph text-secondary-foreground">
+              대한카고크레인의 다양한 작업 현장을 확인하세요
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Main Image Slider */}
+            <motion.div
+              className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-background"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src={galleryImages[currentSlide].src}
+                alt={galleryImages[currentSlide].alt}
+                className="w-full h-full object-cover"
+                width={1200}
+              />
+              
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Slide Counter */}
+              <div className="absolute bottom-4 right-4 bg-background/80 text-primary px-4 py-2 rounded-full text-sm font-paragraph">
+                {currentSlide + 1} / {galleryImages.length}
+              </div>
+            </motion.div>
+
+            {/* Thumbnail Navigation */}
+            <div className="mt-6 flex gap-3 overflow-x-auto pb-2">
+              {galleryImages.map((image, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                    currentSlide === index
+                      ? 'border-primary'
+                      : 'border-secondary/30 hover:border-secondary/60'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                    width={80}
+                  />
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
       {/* Main Services */}
       <section className="relative py-24 px-6 bg-dark-gray">
