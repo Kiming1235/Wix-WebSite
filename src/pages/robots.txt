@@ -1,46 +1,48 @@
 # Robots.txt - SEO Configuration
-# This file controls search engine crawler access to your website
 
-# Default rules for all search engines
+# 기본 규칙
 User-agent: *
 Allow: /
+Allow: /sitemap.xml
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
-Disallow: /*.json$
-Disallow: /*.xml$
+Disallow: /*?lightbox=
 Disallow: /*?*sort=
 Disallow: /*?*filter=
-Crawl-delay: 1
-Request-rate: 1/1s
+Disallow: /*.json$
+Disallow: /*.xml$   # 다른 XML 크롤링 제한
+# Google은 Crawl-delay/Request-rate를 무시하므로 전역에서 사용 안 함
 
-# Google-specific rules
+# Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
-Request-rate: unlimited
 
-# Bing-specific rules
+# Bing
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
-Request-rate: 1/1s
 
-# Yandex-specific rules
+# Yandex
 User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
 
-# Baidu-specific rules
+# Baidu
 User-agent: Baiduspider
 Allow: /
 Crawl-delay: 1
 
-# Block bad bots
+# Naver (국내)
+User-agent: Yeti
+Allow: /
+
+# 악성/과도한 봇 제한
 User-agent: AhrefsBot
 User-agent: SemrushBot
 User-agent: DotBot
 Disallow: /
+Crawl-delay: 10
 
-# Sitemap location
-Sitemap: /sitemap.xml
+# Sitemap 절대경로(정식 도메인)
+Sitemap: https://www.daehancargocrane.com/sitemap.xml
