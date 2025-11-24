@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Homepage -->
   <url>
-    <loc>https://www.daehancargocranes.com/</loc>
+    <loc>https://daehancargocrane.com/</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -15,7 +15,7 @@
 
   <!-- Contact Page -->
   <url>
-    <loc>https://www.daehancargocranes.com/contact</loc>
+    <loc>https://daehancargocrane.com/contact</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -23,28 +23,28 @@
 
   <!-- Service Pages (if implemented) -->
   <url>
-    <loc>https://www.daehancargocranes.com/#service-heavy-transport</loc>
+    <loc>https://daehancargocrane.com/#service-heavy-transport</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.daehancargocranes.com/#service-material-transport</loc>
+    <loc>https://daehancargocrane.com/#service-material-transport</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.daehancargocranes.com/#service-equipment-relocation</loc>
+    <loc>https://daehancargocrane.com/#service-equipment-relocation</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.daehancargocranes.com/#service-equipment-support</loc>
+    <loc>https://daehancargocrane.com/#service-equipment-support</loc>
     <lastmod>2025-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
