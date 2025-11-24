@@ -45,10 +45,10 @@ export default function Layout() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center space-x-4">
-              <a href="tel:010-0000-0000">
+              <a href="tel:010-2332-4822">
                 <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   <Phone className="w-4 h-4 mr-2" />
-                  010-0000-0000
+                  010-2332-4822
                 </Button>
               </a>
             </div>
@@ -87,10 +87,10 @@ export default function Layout() {
                       {item.name}
                     </Link>
                   ))}
-                  <a href="tel:010-0000-0000" className="pt-2">
+                  <a href="tel:010-2332-4822" className="pt-2">
                     <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
                       <Phone className="w-4 h-4 mr-2" />
-                      010-0000-0000
+                      010-2332-4822
                     </Button>
                   </a>
                 </div>
