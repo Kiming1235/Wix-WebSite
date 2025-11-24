@@ -56,10 +56,10 @@ export default function ContactPage() {
                       운송 관련 문의사항이나 견적 요청은 언제든지 전화로 연락해주세요.
                     </p>
                     <a 
-                      href="tel:010-2332-4822" 
+                      href="tel:010-0000-0000" 
                       className="text-3xl font-paragraph text-primary hover:text-primary/80 transition-colors font-semibold"
                     >
-                      010-2332-4822
+                      010-0000-0000
                     </a>
                   </CardContent>
                 </Card>
@@ -139,16 +139,19 @@ export default function ContactPage() {
                         <span className="text-foreground font-semibold">주소:</span>
                       </p>
                       <p className="font-paragraph text-secondary-foreground">
-                        대구광역시 동구 신암남로 145<br />(신암동)
+                        서울특별시 강남구 테헤란로 123<br />
+                        대한카고크레인 본사
                       </p>
                     </div>
                     
                     <div>
                       <p className="font-paragraph text-secondary-foreground mb-2">
-                        <span className="text-foreground font-semibold">사업자번호:</span>
+                        <span className="text-foreground font-semibold">교통편:</span>
                       </p>
-                      <p className="font-paragraph text-secondary-foreground">
-                        141-22-02126
+                      <p className="font-paragraph text-secondary-foreground text-sm">
+                        • 지하철 2호선 강남역 3번 출구 도보 5분<br />
+                        • 버스: 146, 360, 740번 강남역 하차<br />
+                        • 주차: 건물 지하 1-3층 (2시간 무료)
                       </p>
                     </div>
                   </div>
@@ -185,7 +188,7 @@ export default function ContactPage() {
               무료 견적 상담을 통해 정확한 비용과 일정을 확인하세요.
             </p>
             <div className="flex justify-center">
-              <a href="tel:010-2332-4822">
+              <a href="tel:010-0000-0000">
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   <Phone className="w-5 h-5 mr-2" />
                   지금 전화하기
