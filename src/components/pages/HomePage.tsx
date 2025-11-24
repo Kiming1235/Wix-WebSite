@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
 import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
 
 export default function HomePage() {
   const [services, setServices] = useState<Services[]>([]);
@@ -128,21 +127,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet>
-        <title>대한카고크레인 - 중량물 운송 및 장비 연계 서비스</title>
-        <meta name="description" content="대구 지역 중량물 운송, 카고크레인, 건설 자재 운반, 산업 장비 이전 전문 기업. 안전하고 효율적인 맞춤형 운송 솔루션으로 프로젝트 성공을 지원합니다." />
-        <meta name="keywords" content="중량물 운송, 카고크레인, 장비 운송, 건설 자재 운반, 대구 운송, 산업 장비 이전, 대구 크레인" />
-        <meta property="og:title" content="대한카고크레인 - 중량물 운송 및 장비 연계 서비스" />
-        <meta property="og:description" content="대구 지역 중량물 운송, 카고크레인, 건설 자재 운반, 산업 장비 이전 전문 기업" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.daehancargocranes.com/" />
-        <meta property="og:image" content="https://static.wixstatic.com/media/6820d4_25f1507fa06d4d2f910f93c63873a9ca~mv2.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="대한카고크레인 - 중량물 운송 및 장비 연계 서비스" />
-        <meta name="twitter:description" content="대구 지역 중량물 운송, 카고크레인, 건설 자재 운반, 산업 장비 이전 전문 기업" />
-        <meta name="twitter:image" content="https://static.wixstatic.com/media/6820d4_25f1507fa06d4d2f910f93c63873a9ca~mv2.png" />
-        <link rel="canonical" href="https://www.daehancargocranes.com/" />
-      </Helmet>
       {/* Hero Section */}
       <section className="relative h-[50vh] min-h-[400px] overflow-hidden">
         <div className="absolute inset-0 w-full h-full">

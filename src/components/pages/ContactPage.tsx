@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, MapPin, Clock, Mail, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 
 export default function ContactPage() {
   const handleMapClick = () => {
@@ -13,19 +12,6 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <Helmet>
-        <title>연락처 - 대한카고크레인</title>
-        <meta name="description" content="대한카고크레인 연락처 정보. 전화, 이메일, 주소, 운영 시간 안내. 중량물 운송 및 장비 연계 서비스 문의." />
-        <meta name="keywords" content="대한카고크레인 연락처, 중량물 운송 문의, 카고크레인 상담, 대구 운송 회사" />
-        <meta property="og:title" content="연락처 - 대한카고크레인" />
-        <meta property="og:description" content="대한카고크레인 연락처 정보. 전화, 이메일, 주소, 운영 시간 안내." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.daehancargocranes.com/contact" />
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="연락처 - 대한카고크레인" />
-        <meta name="twitter:description" content="대한카고크레인 연락처 정보" />
-        <link rel="canonical" href="https://www.daehancargocranes.com/contact" />
-      </Helmet>
       {/* Header */}
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
