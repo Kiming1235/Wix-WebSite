@@ -280,7 +280,7 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <motion.div
               className="text-center"
               initial={{ opacity: 0, x: -30 }}
@@ -289,13 +289,27 @@ export default function HomePage() {
               viewport={{ once: true }}
             >
               <Phone className="w-12 h-12 mx-auto text-primary mb-4 fill-color-11" />
-              <h3 className="text-xl font-heading font-semibold mb-2">전화 문의</h3>
+              <h3 className="text-xl font-heading font-semibold mb-2">연락처</h3>
               <a 
-                href="tel:010-0000-0000" 
+                href="tel:010-2332-4822" 
                 className="text-2xl font-paragraph text-primary hover:text-primary/80 transition-colors"
               >
-                010-0000-0000
+                010-2332-4822
               </a>
+            </motion.div>
+
+            <motion.div
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <MapPin className="w-12 h-12 mx-auto text-primary mb-4" />
+              <h3 className="text-xl font-heading font-semibold mb-2">사업장 주소</h3>
+              <p className="text-base font-paragraph text-primary">
+                대구광역시 동구 신암남로 145<br />(신암동)
+              </p>
             </motion.div>
 
             <motion.div
@@ -305,13 +319,11 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <MapPin className="w-12 h-12 mx-auto text-primary mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-2">오시는 길</h3>
-              <Link to="/contact">
-                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-                  위치 보기
-                </Button>
-              </Link>
+              <Building className="w-12 h-12 mx-auto text-primary mb-4" />
+              <h3 className="text-xl font-heading font-semibold mb-2">사업자번호</h3>
+              <p className="text-2xl font-paragraph text-primary">
+                141-22-02126
+              </p>
             </motion.div>
           </div>
         </div>
