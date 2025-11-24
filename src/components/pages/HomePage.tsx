@@ -266,7 +266,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
       {/* Main Services */}
-      <section className="relative py-24 px-6 bg-dark-gray">
+      <section className="relative py-24 px-6 bg-gradient-to-b from-dark-gray via-dark-gray to-background">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
