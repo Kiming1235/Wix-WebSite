@@ -147,7 +147,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }}
           >
-            대한카고크레인
+            대한크레인&카고크레인
           </motion.h1>
           <motion.p
             className="text-white font-geotica-w01-four-open font-normal whitespace-nowrap text-base mt-[15px] mr-0 mb-8 ml-0"
