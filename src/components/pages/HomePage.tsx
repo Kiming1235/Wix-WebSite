@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
       {/* Gallery Section */}
-      <section className="relative py-24 px-6 bg-dark-gray">
+      <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
@@ -198,7 +198,7 @@ export default function HomePage() {
           <div className="relative">
             {/* Main Image Slider */}
             <motion.div
-              className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-background"
+              className="relative h-[400px] md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-background"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -207,7 +207,7 @@ export default function HomePage() {
               <Image
                 src={galleryImages[currentSlide].src}
                 alt={galleryImages[currentSlide].alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 width={1200}
               />
               
