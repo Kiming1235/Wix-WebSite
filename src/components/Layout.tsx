@@ -142,9 +142,18 @@ export default function Layout() {
               <div className="space-y-2 font-paragraph text-secondary-foreground">
                 <p>
                   <span className="text-foreground">전화:</span>{' '}
-                  <a href="tel:010-0000-0000" className="text-primary hover:text-primary/80">{"010-2332-4822"}</a>
+                  <a href="tel:010-0000-0000" className="text-primary hover:text-primary/80">{"010-000-"}</a>
                 </p>
-
+                <p>
+                  <span className="text-foreground">이메일:</span>{' '}
+                  <a href="mailto:info@daehancargo.co.kr" className="text-primary hover:text-primary/80">
+                    info@daehancargo.co.kr
+                  </a>
+                </p>
+                <p>
+                  <span className="text-foreground">주소:</span><br />
+                  서울특별시 강남구 테헤란로 123
+                </p>
               </div>
             </div>
           </div>
