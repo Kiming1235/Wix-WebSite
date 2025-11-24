@@ -311,20 +311,6 @@ export default function HomePage() {
                 대구광역시 동구 신암남로 145<br />(신암동)
               </p>
             </motion.div>
-
-            <motion.div
-              className="text-center"
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Building className="w-12 h-12 mx-auto text-primary mb-4" />
-              <h3 className="text-xl font-heading font-semibold mb-2">사업자번호</h3>
-              <p className="text-2xl font-paragraph text-primary">
-                141-22-02126
-              </p>
-            </motion.div>
           </div>
         </div>
       </section>
