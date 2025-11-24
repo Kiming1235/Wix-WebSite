@@ -16,6 +16,11 @@ type ImageData = {
 }
 
 const getImageData = (url: string, imageProps: ImageProps): ImageData | undefined => {
+  // Only run on client side
+  if (typeof window === 'undefined') {
+    return undefined
+  }
+
   // wix:image://v1/${uri}/${filename}#originWidth=${width}&originHeight=${height}
   const wixImagePrefix = 'wix:image://v1/'
   if (url.startsWith(wixImagePrefix)) {

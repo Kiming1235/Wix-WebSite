@@ -10,6 +10,7 @@ type Size = {
 export const useSize = (ref: React.RefObject<HTMLElement>, threshold: number = 50): Size | null => {
 
   const [size, setSize] = useState<Size | null>(null)
+  const [isClient, setIsClient] = useState(false)
 
   const updateSize = (newSize: Size): void => {
     if (!size) {
@@ -25,17 +26,24 @@ export const useSize = (ref: React.RefObject<HTMLElement>, threshold: number = 5
     }
   }
 
+  // Ensure we only run browser APIs on the client
   useLayoutEffect(() => {
-      if (ref.current) {
+    setIsClient(true)
+  }, [])
+
+  useLayoutEffect(() => {
+      if (isClient && ref.current) {
           const { width, height } = ref.current.getBoundingClientRect()
           updateSize({ width, height })
       }
-  }, [ref.current, size])
+  }, [ref.current, size, isClient])
 
   useResizeObserver(ref, (entry) => {
-      const { width, height } = entry.contentRect
-      if (size.width !== width || size.height !== height) {
-        updateSize({ width, height })
+      if (isClient) {
+        const { width, height } = entry.contentRect
+        if (size && size.width !== width || size.height !== height) {
+          updateSize({ width, height })
+        }
       }
   })
 
