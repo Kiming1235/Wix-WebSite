@@ -179,7 +179,7 @@ export default function HomePage() {
                 dir="ltr">
                 대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
               </p>
-              <p className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 my-0 mx-[3px] max-w-2xl">
+              <p className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 my-0 mx-auto max-w-2xl">
                 각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.
               </p>
             </div>
