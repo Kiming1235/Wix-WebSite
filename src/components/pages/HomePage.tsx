@@ -188,88 +188,6 @@ export default function HomePage() {
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
-      {/* Gallery Section */}
-      <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
-        <div className="max-w-[100rem] mx-auto">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-4xl font-heading font-bold mb-6">현장 갤러리</h2>
-            <p className="text-lg font-paragraph text-secondary-foreground">
-              대한카고크레인의 다양한 작업 현장을 확인하세요
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            {/* Main Image Slider */}
-            <motion.div
-              className="relative h-[400px] md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-background"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src={galleryImages[currentSlide].src}
-                alt={galleryImages[currentSlide].alt}
-                className="w-full h-full object-contain"
-                width={1200}
-              />
-              
-              {/* Navigation Buttons */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
-                aria-label="Previous slide"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
-              {/* Slide Counter */}
-              <div className="absolute bottom-4 right-4 bg-background/80 text-primary px-4 py-2 rounded-full text-sm font-paragraph">
-                {currentSlide + 1} / {galleryImages.length}
-              </div>
-            </motion.div>
-
-            {/* Thumbnail Navigation */}
-            <div className="mt-6 flex gap-3 overflow-x-auto pb-2 justify-center">
-              {galleryImages.map((image, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                    currentSlide === index
-                      ? 'border-primary'
-                      : 'border-secondary/30 hover:border-secondary/60'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                    width={80}
-                  />
-                </motion.button>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* Gradient transition to next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
-      </section>
       {/* Main Services */}
       <section className="relative py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -333,7 +251,87 @@ export default function HomePage() {
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
-      {/* Company Strengths */}
+      {/* Gallery Section */}
+      <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-background">
+        <div className="max-w-[100rem] mx-auto">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl font-heading font-bold mb-6">현장 갤러리</h2>
+            <p className="text-lg font-paragraph text-secondary-foreground">
+              대한카고크레인의 다양한 작업 현장을 확인하세요
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Main Image Slider */}
+            <motion.div
+              className="relative h-[400px] md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-dark-gray"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Image
+                src={galleryImages[currentSlide].src}
+                alt={galleryImages[currentSlide].alt}
+                className="w-full h-full object-contain"
+                width={1200}
+              />
+              
+              {/* Navigation Buttons */}
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Slide Counter */}
+              <div className="absolute bottom-4 right-4 bg-dark-gray/80 text-primary px-4 py-2 rounded-full text-sm font-paragraph">
+                {currentSlide + 1} / {galleryImages.length}
+              </div>
+            </motion.div>
+
+            {/* Thumbnail Navigation */}
+            <div className="mt-6 flex gap-3 overflow-x-auto pb-2 justify-center">
+              {galleryImages.map((image, index) => (
+                <motion.button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                    currentSlide === index
+                      ? 'border-primary'
+                      : 'border-secondary/30 hover:border-secondary/60'
+                  }`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover"
+                    width={80}
+                  />
+                </motion.button>
+              ))}
+            </div>
+          </div>
+        </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
