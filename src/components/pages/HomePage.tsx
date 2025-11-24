@@ -332,6 +332,8 @@ export default function HomePage() {
         </div>
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
+      </section>
+      {/* Company Strengths */}
       <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
