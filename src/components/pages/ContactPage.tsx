@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Phone, MapPin, Clock, Mail, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export default function ContactPage() {
   const handleMapClick = () => {
@@ -20,10 +19,10 @@ export default function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
+            <a href="/" className="inline-flex items-center text-primary hover:text-primary/80 mb-8 transition-colors">
               <ArrowLeft className="w-5 h-5 mr-2" />
               홈으로 돌아가기
-            </Link>
+            </a>
             <h1 className="text-5xl font-heading font-bold mb-6">연락처</h1>
             <p className="text-xl font-paragraph text-secondary-foreground max-w-3xl">
               언제든지 연락주시면 신속하고 정확한 상담을 제공해드리겠습니다

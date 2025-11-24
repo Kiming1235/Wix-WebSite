@@ -1,10 +1,14 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Phone, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function Layout() {
+interface LayoutProps {
+  children?: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -22,16 +26,16 @@ export default function Layout() {
         <nav className="max-w-[100rem] mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <Link to="/" className="text-2xl font-heading font-bold text-primary">
+            <a href="/" className="text-2xl font-heading font-bold text-primary">
               대한카고크레인
-            </Link>
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navigation.map((item) => (
-                <Link
+                <a
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className={`font-paragraph transition-colors ${
                     location.pathname === item.href
                       ? 'text-primary'
@@ -39,7 +43,7 @@ export default function Layout() {
                   }`}
                 >
                   {item.name}
-                </Link>
+                </a>
               ))}
             </div>
 
@@ -74,9 +78,9 @@ export default function Layout() {
               >
                 <div className="flex flex-col space-y-4 pt-4">
                   {navigation.map((item) => (
-                    <Link
+                    <a
                       key={item.name}
-                      to={item.href}
+                      href={item.href}
                       onClick={() => setIsMenuOpen(false)}
                       className={`font-paragraph transition-colors ${
                         location.pathname === item.href
@@ -85,7 +89,7 @@ export default function Layout() {
                       }`}
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   ))}
                   <a href="tel:010-2332-4822" className="pt-2">
                     <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
@@ -102,7 +106,7 @@ export default function Layout() {
 
       {/* Main Content */}
       <main className="pt-20">
-        <Outlet />
+        {children}
       </main>
 
       {/* Footer */}
@@ -127,12 +131,12 @@ export default function Layout() {
               <ul className="space-y-2">
                 {navigation.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      to={item.href}
+                    <a
+                      href={item.href}
                       className="font-paragraph text-secondary-foreground hover:text-primary transition-colors"
                     >
                       {item.name}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

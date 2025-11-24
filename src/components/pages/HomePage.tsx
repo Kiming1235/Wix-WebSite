@@ -3,7 +3,6 @@ import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
 import { useEffect, useState } from 'react';
@@ -439,11 +438,11 @@ export default function HomePage() {
               <p className="text-base font-paragraph text-primary mb-4">
                 대구광역시 동구 신암남로 145<br />(신암동)
               </p>
-              <Link to="/contact">
+              <a href="/contact">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
                   위치보기
                 </Button>
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>
