@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 export default function ContactPage() {
   const handleMapClick = () => {
-    // 구글 지도로 연결 (예시 주소)
-    window.open('https://maps.google.com/?q=대한카고크레인', '_blank');
+    // 네이버 지도로 연결
+    window.open('https://map.naver.com/p/entry/place/1343980670?c=15.00,0,0,0,dh&placePath=/home?from=map&fromPanelNum=1&additionalHeight=76&timestamp=202511240941&locale=ko&svcName=map_pcv5', '_blank');
   };
 
   return (
@@ -162,7 +162,7 @@ export default function ContactPage() {
                     size="lg"
                   >
                     <MapPin className="w-5 h-5 mr-2" />
-                    구글 지도에서 보기
+                    네이버 지도에서 보기
                   </Button>
                 </CardContent>
               </Card>
