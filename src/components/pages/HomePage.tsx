@@ -179,7 +179,7 @@ export default function HomePage() {
                 dir="ltr">
                 대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
               </p>
-              <p className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 my-0 mx-auto max-w-2xl">
+              <p className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 my-0 mx-[3px]">
                 각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.
               </p>
             </div>
@@ -248,6 +248,8 @@ export default function HomePage() {
 
 
         </div>
+        {/* Gradient transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
       {/* Gallery Section */}
       <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
@@ -333,8 +335,6 @@ export default function HomePage() {
       </section>
       {/* Company Strengths */}
       <section className="relative py-24 px-6">
-        {/* Gradient transition from previous section */}
-        <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-dark-gray to-transparent pointer-events-none"></div>
         <div className="max-w-[100rem] mx-auto">
           <motion.div
             className="text-center mb-16"
