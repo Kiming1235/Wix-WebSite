@@ -139,8 +139,7 @@ export default function ContactPage() {
                         <span className="text-foreground font-semibold">주소:</span>
                       </p>
                       <p className="font-paragraph text-secondary-foreground">
-                        대구광역시 동구 신암남로 145(신암동)<br />
-                        대한카고크레인 본사
+                        대구광역시 동구 신암남로 145(신암동)
                       </p>
                     </div>
                     
