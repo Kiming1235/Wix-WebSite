@@ -1,0 +1,19 @@
+---
+import AppRouter from '@/components/Router';
+import { Head } from '@/components/Head';
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <Head />
+  </head>
+  <body>
+    <AppRouter client:load />
+  </body>
+</html>
+
+<style is:global>
+  @import '@/styles/global.css';
+  @import '@/styles/fonts.css';
+</style>
