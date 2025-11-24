@@ -107,10 +107,10 @@ export default function ContactPage() {
                       자세한 견적서나 문서가 필요하시면 이메일로 연락해주세요.
                     </p>
                     <a 
-                      href="mailto:info@daehancargo.co.kr" 
+                      href="mailto:kkh2772@naver.com" 
                       className="text-xl font-paragraph text-primary hover:text-primary/80 transition-colors"
                     >
-                      info@daehancargo.co.kr
+                      kkh2772@naver.com
                     </a>
                   </CardContent>
                 </Card>
