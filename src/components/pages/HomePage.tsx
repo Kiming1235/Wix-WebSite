@@ -238,7 +238,7 @@ export default function HomePage() {
             </motion.div>
 
             {/* Thumbnail Navigation */}
-            <div className="mt-6 flex gap-3 overflow-x-auto pb-2">
+            <div className="mt-6 flex gap-3 overflow-x-auto pb-2 justify-center">
               {galleryImages.map((image, index) => (
                 <motion.button
                   key={index}
