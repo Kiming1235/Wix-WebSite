@@ -150,8 +150,8 @@ export default function Layout() {
                 </p>
                 <p>
                   <span className="text-foreground">이메일:</span>{' '}
-                  <a href="mailto:info@daehancargo.co.kr" className="text-primary hover:text-primary/80">
-                    info@daehancargo.co.kr
+                  <a href="mailto:kkh2772@naver.com" className="text-primary hover:text-primary/80">
+                    kkh2772@naver.com
                   </a>
                 </p>
                 <p>
