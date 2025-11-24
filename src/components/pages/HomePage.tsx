@@ -154,7 +154,9 @@ export default function HomePage() {
             className="text-white font-geotica-w01-four-open font-normal whitespace-nowrap text-base mt-[15px] mr-0 mb-8 ml-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
-            dir="ltr">{\"믿을 수 있는 중량물 운송 및 장비 연계 서비스\"}</motion.p>
+            dir="ltr">
+            믿을 수 있는 중량물 운송 및 장비 연계 서비스
+          </motion.p>
 
         </div>
         {/* Gradient transition to next section */}
@@ -174,9 +176,12 @@ export default function HomePage() {
             <div className="max-w-4xl mx-auto">
               <p
                 className="text-secondary-foreground writing-mode-vertical-rl writing-mode-horizontal-tb indent-0.5 normal-case not-italic no-underline font-bold text-xl font-heading m-0 text-center mt-0 mr-0 mb-6 ml-[5px]"
-                dir="ltr">{\"대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.\"}</p>
+                dir="ltr">
+                대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
+              </p>
               <p className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 my-0 mx-[3px]">
-              {\"각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.\"}</p>
+                각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.
+              </p>
             </div>
           </motion.div>
         </div>
@@ -276,7 +281,9 @@ export default function HomePage() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-heading font-bold mb-6">주요 서비스</h2>
-            <p className="text-lg font-paragraph text-secondary-foreground mx-auto text-center">{\"전문적이고 신뢰할 수 있는 운송 솔루션을 제공\"}</p>
+            <p className="text-lg font-paragraph text-secondary-foreground mx-auto text-center">
+              전문적이고 신뢰할 수 있는 운송 솔루션을 제공
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
