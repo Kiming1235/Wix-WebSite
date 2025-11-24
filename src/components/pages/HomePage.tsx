@@ -252,7 +252,7 @@ export default function HomePage() {
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none"></div>
       </section>
       {/* Gallery Section */}
-      <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-background">
+      <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
         {/* Seamless gradient transition from services */}
         <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-background to-background pointer-events-none"></div>
         <div className="max-w-[100rem] mx-auto">
