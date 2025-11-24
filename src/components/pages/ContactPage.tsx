@@ -144,16 +144,7 @@ export default function ContactPage() {
                       </p>
                     </div>
                     
-                    <div>
-                      <p className="font-paragraph text-secondary-foreground mb-2">
-                        <span className="text-foreground font-semibold">교통편:</span>
-                      </p>
-                      <p className="font-paragraph text-secondary-foreground text-sm">
-                        • 버스: 신암역 인근 버스 정류장<br />
-                        • 주차: 건물 인근 주차 가능<br />
-                        • 문의: 전화 또는 이메일로 상세 위치 안내
-                      </p>
-                    </div>
+
                   </div>
 
                   <Button 
