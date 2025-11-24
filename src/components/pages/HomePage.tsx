@@ -268,19 +268,19 @@ export default function HomePage() {
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
-            className="mb-16"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
             <h2 className="text-4xl font-heading font-bold mb-6">문의하기</h2>
-            <p className="text-lg font-paragraph text-secondary-foreground max-w-2xl">
+            <p className="text-lg font-paragraph text-secondary-foreground">
               언제든지 연락주시면 신속하게 상담해드리겠습니다
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
             <motion.div
               className="text-center"
               initial={{ opacity: 0, x: -30 }}
