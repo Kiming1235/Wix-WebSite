@@ -12,7 +12,7 @@ export const Head = () => {
       <meta name="language" content="Korean" />
       
       {/* Naver SEO Meta Tags */}
-      <meta name="naver-site-verification" content="naver-site-verification-code" />
+      <meta name="naver-site-verification" content="4775914a9f3ec89f8319d68d878db78083e33fc2" />
       <meta name="NaverBot" content="All" />
       <meta name="Yeti" content="All" />
       
