@@ -2,27 +2,28 @@ export const Head = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "대한카고크레인",
-    "alternateName": "Daehan Cargo Crane",
-    "description":
+    name: "대한카고크레인",
+    alternateName: "Daehan Cargo Crane",
+    description:
       "대구광역시 동구 신암남로 145(신암동)에 위치한 중량물·산업 장비·건설 자재 운송 전문 기업입니다. 안전하고 효율적인 크레인 연계 운송 솔루션을 제공합니다.",
-    "url": "https://www.daehancargocrane.com",
-    "image": "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
-    "telephone": "010-2332-4822",
-    "address": {
+    url: "https://www.daehancargocrane.com",
+    image:
+      "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
+    telephone: "010-2332-4822",
+    address: {
       "@type": "PostalAddress",
-      "streetAddress": "신암남로 145",
-      "addressLocality": "동구",
-      "addressRegion": "대구광역시",
-      "postalCode": "",
-      "addressCountry": "KR"
+      streetAddress: "신암남로 145",
+      addressLocality: "동구",
+      addressRegion: "대구광역시",
+      postalCode: "",
+      addressCountry: "KR",
     },
-    "areaServed": "KR",
-    "priceRange": "$",
-    "sameAs": [
+    areaServed: "KR",
+    priceRange: "$",
+    sameAs: [
       "https://www.facebook.com/",
-      "https://www.instagram.com/"
-    ]
+      "https://www.instagram.com/",
+    ],
   };
 
   return (
@@ -33,6 +34,10 @@ export const Head = () => {
       <meta
         name="description"
         content="대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다."
+      />
+      <meta
+        name="keywords"
+        content="대한카고크레인, 경산크레인, 대구크레인, 경주크레인, 구미크레인, 성주크레인, 중량물 운송, 산업 장비 운송"
       />
       <meta
         name="naver-site-verification"
@@ -48,9 +53,14 @@ export const Head = () => {
         href="https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png"
       />
       <link rel="preconnect" href="https://static.parastorage.com" />
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema)}
-      </script>
+
+      {/* ✅ 구조화 데이터 (JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c"),
+        }}
+      />
     </>
   );
 };
