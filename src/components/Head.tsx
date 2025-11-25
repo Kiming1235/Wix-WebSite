@@ -1,30 +1,30 @@
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": "https://www.daehancargocrane.com/#business",
-  "name": "대한카고크레인",
-  "alternateName": "Daehan Cargo Crane",
-  "description": "대구광역시 동구 신암남로 145(신암동)에 위치한 중량물·산업 장비·건설 자재 운송 전문 기업입니다. 안전하고 효율적인 크레인 연계 운송 솔루션을 제공합니다.",
-  "url": "https://www.daehancargocrane.com",
-  "image": "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
-  "telephone": "+82-10-2332-4822",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "신암남로 145",
-    "addressLocality": "동구",
-    "addressRegion": "대구광역시",
-    "postalCode": "41105",
-    "addressCountry": "KR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 35.8807,
-    "longitude": 128.6169
-  },
-  "areaServed": "KR",
-  "priceRange": "$"
-  // "sameAs": ["실제_페북_URL","실제_인스타_URL"] // 실제 계정 있을 때만 넣기
-};
+export const Head = () => {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "대한카고크레인",
+    alternateName: "Daehan Cargo Crane",
+    description:
+      "대구광역시 동구 신암남로 145(신암동)에 위치한 중량물·산업 장비·건설 자재 운송 전문 기업입니다. 안전하고 효율적인 크레인 연계 운송 솔루션을 제공합니다.",
+    url: "https://www.daehancargocrane.com",
+    image:
+      "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
+    telephone: "010-2332-4822",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "신암남로 145",
+      addressLocality: "동구",
+      addressRegion: "대구광역시",
+      postalCode: "",
+      addressCountry: "KR",
+    },
+    areaServed: "KR",
+    priceRange: "$",
+    sameAs: [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/",
+    ],
+  };
 
   return (
     <>
