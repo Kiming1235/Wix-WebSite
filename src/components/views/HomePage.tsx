@@ -174,7 +174,7 @@ export default function HomePage() {
             <p
               className="text-secondary-foreground writing-mode-vertical-rl writing-mode-horizontal-tb indent-0.5 normal-case not-italic no-underline font-bold text-xl font-heading m-0 text-center mt-0 mr-0 mb-6 ml-[5px]"
               dir="ltr">
-              대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
+              대한카고크레인은 경산·대구·경주·구미·성주 지역을 중심으로 중량물, 산업 장비, 건설 자재, 화물 운송 전문 솔루션을 제공합니다. 안전하고 효율적인 맞춤 운송 서비스로 고객의 프로젝트 완수를 지원합니다.
             </p>
           </motion.div>
         </div>
