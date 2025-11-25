@@ -20,10 +20,6 @@ export const Head = () => {
     },
     areaServed: "KR",
     priceRange: "$",
-    sameAs: [
-      "https://www.facebook.com/",
-      "https://www.instagram.com/",
-    ],
   };
 
   return (
