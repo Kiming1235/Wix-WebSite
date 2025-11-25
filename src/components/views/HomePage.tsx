@@ -165,34 +165,16 @@ export default function HomePage() {
       <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
-            className="text-center mb-12"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-heading font-bold mb-8">회사 소개</h2>
             <p
               className="text-secondary-foreground writing-mode-vertical-rl writing-mode-horizontal-tb indent-0.5 normal-case not-italic no-underline font-bold text-xl font-heading m-0 text-center mt-0 mr-0 mb-6 ml-[5px]"
               dir="ltr">
               대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <p className="text-lg font-paragraph text-secondary-foreground text-center leading-relaxed mb-6">
-              최적화된 맞춤형 운송 솔루션과 안전하고 효율적인 작업을 통해 고객의 성공적인 프로젝트 완수를 지원합니다. 
-              저희는 각 현장의 특성을 정확히 파악하고, 최적의 장비와 전문 인력을 투입하여 안전하고 신속한 운송 서비스를 제공합니다.
-            </p>
-            <p className="text-lg font-paragraph text-secondary-foreground text-center leading-relaxed">
-              경산, 대구, 경주, 구미, 성주 등 영남 지역에서 20년 이상의 경험을 바탕으로, 
-              중량물 운송부터 정밀 장비 이전까지 다양한 운송 솔루션을 제공하고 있습니다.
             </p>
           </motion.div>
         </div>
