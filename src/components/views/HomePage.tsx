@@ -40,6 +40,18 @@ export default function HomePage() {
     {
       src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg',
       alt: '대한카고크레인 작업 현장 7'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_d9967036235e430089fc18621661705e~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 8'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_5302d235bca14224979f68d0a4df5d05~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 9'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_4b4a4f17c36b42eaad73d8c14d83431d~mv2.jpg',
+      alt: '대한카고크레인 작업 현장 10'
     }
   ];
 
