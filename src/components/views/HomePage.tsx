@@ -52,6 +52,18 @@ export default function HomePage() {
     {
       src: 'https://static.wixstatic.com/media/6820d4_4b4a4f17c36b42eaad73d8c14d83431d~mv2.jpg',
       alt: '대한카고크레인 작업 현장 10'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_814daae2f8cf472aa17d385ef62bc3c8~mv2.jpg',
+      alt: '대한카고크레인 크레인 작업 현장 - 건설 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c58c26e1d39548328222b2aa54cce8c1~mv2.jpg',
+      alt: '대한카고크레인 자재 운반 작업 - 석재 운송'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_4a76c5a7343042018acb92e831ea50f7~mv2.jpg',
+      alt: '대한카고크레인 대형 석재 운반 작업'
     }
   ];
 
