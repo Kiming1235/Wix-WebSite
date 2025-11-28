@@ -45,8 +45,7 @@ export const Head = () => {
       />
       <link
         rel="icon"
-        type="image/png"
-        href="https://static.wixstatic.com/media/6820d4_8bd972c0ee754466b34dfcd5dfe1af77~mv2.png"
+        href="/favicon.ico"
       />
       <link rel="preconnect" href="https://static.parastorage.com" />
 
