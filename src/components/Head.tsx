@@ -47,6 +47,18 @@ export const Head = () => {
         rel="icon"
         href="/favicon.ico"
       />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="96x96"
+        href="/favicon-96.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="/favicon-192.png"
+      />
       <link rel="preconnect" href="https://static.parastorage.com" />
 
       {/* ✅ 구조화 데이터 (JSON-LD) */}
