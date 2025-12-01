@@ -64,6 +64,46 @@ export default function HomePage() {
     {
       src: 'https://static.wixstatic.com/media/6820d4_4a76c5a7343042018acb92e831ea50f7~mv2.jpg',
       alt: '대한카고크레인 대형 석재 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a6d63a2f9fe04eb6b908f536f37d9192~mv2.jpeg',
+      alt: '대한카고크레인 크레인 작업 - 중량물 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c6e57b6001b4421eb9eceda11a24c1fa~mv2.jpeg',
+      alt: '대한카고크레인 산악 지역 작업 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_68fa81b3d0fe42ae9e231b51b65cba78~mv2.jpeg',
+      alt: '대한카고크레인 크레인 타워 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_9e9f78e30ffa49b5b140a42f2773aba0~mv2.jpeg',
+      alt: '대한카고크레인 건설 현장 자재 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_d11cf66412b9475e899f7e164bcd3014~mv2.jpeg',
+      alt: '대한카고크레인 대형 목재 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_9a63e1839fb946c2bcb64a1453e8e7cd~mv2.jpeg',
+      alt: '대한카고크레인 도시 지역 크레인 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c52fea20028348c79d6e77d0477f6e45~mv2.jpeg',
+      alt: '대한카고크레인 파이프 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a2b6bca564e64ba98734f824aaee699d~mv2.jpeg',
+      alt: '대한카고크레인 실내 작업 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_61be87a72ed84a719f5c68b708c99edb~mv2.jpeg',
+      alt: '대한카고크레인 산악 지역 중량물 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_021614c357984edab2601297a18c8145~mv2.jpeg',
+      alt: '대한카고크레인 크레인 작업 - 정밀 운반'
     }
   ];
 
