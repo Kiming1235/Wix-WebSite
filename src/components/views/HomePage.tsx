@@ -285,7 +285,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Grid Gallery */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
@@ -300,7 +300,7 @@ export default function HomePage() {
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                  width={400}
+                  width={250}
                 />
                 {/* Overlay on hover */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
