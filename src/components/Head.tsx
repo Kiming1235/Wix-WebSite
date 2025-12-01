@@ -88,7 +88,7 @@ export const Head = () => {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.daehancargocrane.com" />
       <meta property="og:title" content="대한카고크레인 | 중량물·산업 장비 운송 전문 기업" />
-      <meta property="og:description" content="대한카고크레인은 대구·경산·경주·구미·성주 지역에서 중량물, 산업 장비, 건설 자재 운송을 전문으로 하는 기업입니다. 안전하고 효율적인 맞춤형 크레인 운송 솔루션을 제공합니다." />
+      <meta property="og:description" content="대한카고크레인은 대구·경산·경주·구미·성주 지역에서 중량물, 산업 장비, 건설 자재 운송을 전문으로 하는 기업입니다." />
       <meta property="og:image" content="https://www.daehancargocrane.com/favicon-192.png" />
 
       <link rel="preconnect" href="https://static.parastorage.com" />
