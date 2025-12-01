@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, X } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
 import { useEffect, useState } from 'react';
@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 export default function HomePage() {
   const [services, setServices] = useState<Services[]>([]);
   const [strengths, setStrengths] = useState<CompanyStrengths[]>([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const galleryImages = [
     {
@@ -140,13 +140,7 @@ export default function HomePage() {
   const displayServices = services.length > 0 ? services : defaultServices;
   const displayStrengths = strengths.length > 0 ? strengths : defaultStrengths;
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % galleryImages.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -290,72 +284,75 @@ export default function HomePage() {
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Main Image Slider */}
-            <motion.div
-              className="relative h-[400px] md:h-[450px] lg:h-[550px] rounded-lg overflow-hidden bg-dark-gray"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Image
-                src={galleryImages[currentSlide].src}
-                alt={galleryImages[currentSlide].alt}
-                className="w-full h-full object-contain"
-                width={1200}
-              />
-              
-              {/* Navigation Buttons */}
-              <button
-                onClick={prevSlide}
-                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
-                aria-label="Previous slide"
+          {/* Grid Gallery */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                viewport={{ once: true }}
+                className="relative h-64 rounded-lg overflow-hidden cursor-pointer group"
+                onClick={() => setSelectedImage(image.src)}
               >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-              <button
-                onClick={nextSlide}
-                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors"
-                aria-label="Next slide"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-
-              {/* Slide Counter */}
-              <div className="absolute bottom-4 right-4 bg-dark-gray/80 text-primary px-4 py-2 rounded-full text-sm font-paragraph">
-                {currentSlide + 1} / {galleryImages.length}
-              </div>
-            </motion.div>
-
-            {/* Thumbnail Navigation */}
-            <div className="mt-6 flex gap-3 overflow-x-auto pb-2 justify-center">
-              {galleryImages.map((image, index) => (
-                <motion.button
-                  key={index}
-                  onClick={() => setCurrentSlide(index)}
-                  className={`flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                    currentSlide === index
-                      ? 'border-primary'
-                      : 'border-secondary/30 hover:border-secondary/60'
-                  }`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover"
-                    width={80}
-                  />
-                </motion.button>
-              ))}
-            </div>
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  width={400}
+                />
+                {/* Overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300 flex items-center justify-center">
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileHover={{ opacity: 1, scale: 1 }}
+                    className="text-white text-sm font-paragraph"
+                  >
+                    클릭하여 확대
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <motion.div
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <motion.div
+            className="relative max-w-4xl w-full max-h-[90vh]"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.9 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={selectedImage}
+              alt="확대된 갤러리 이미지"
+              className="w-full h-full object-contain rounded-lg"
+              width={1200}
+            />
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute top-4 right-4 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors z-10"
+              aria-label="Close lightbox"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </motion.div>
+        </motion.div>
+      )}
       {/* Company Strengths */}
       <section className="relative py-24 px-6">
         {/* Gradient transition from previous section */}
