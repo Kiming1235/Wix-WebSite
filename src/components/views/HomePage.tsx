@@ -374,7 +374,7 @@ export default function HomePage() {
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
-            className="relative w-full max-w-2xl max-h-[80vh] flex items-center justify-center"
+            className="relative w-full h-full flex items-center justify-center"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -383,7 +383,7 @@ export default function HomePage() {
             <Image
               src={selectedImage}
               alt="확대된 갤러리 이미지"
-              className="w-full h-full object-contain rounded-lg my-8"
+              className="max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg"
               width={1200}
             />
             {/* Close Button */}
