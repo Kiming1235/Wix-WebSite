@@ -43,6 +43,7 @@ export const Head = () => {
         name="naver-site-verification"
         content="c11cba63c6d7d068d4ad3d7e96912b1392370252"
       />
+
       {/* Favicon - Standard */}
       <link rel="icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -82,6 +83,13 @@ export const Head = () => {
       <meta name="msapplication-TileColor" content="#1E293B" />
       <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
       <meta name="theme-color" content="#1E293B" />
+
+      {/* ✅ Open Graph (SNS / 네이버 프리뷰용) */}
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://www.daehancargocrane.com" />
+      <meta property="og:title" content="대한카고크레인 | 중량물·산업 장비 운송 전문 기업" />
+      <meta property="og:description" content="대한카고크레인은 대구·경산·경주·구미·성주 지역에서 중량물, 산업 장비, 건설 자재 운송을 전문으로 하는 기업입니다. 안전하고 효율적인 맞춤형 크레인 운송 솔루션을 제공합니다." />
+      <meta property="og:image" content="https://www.daehancargocrane.com/favicon-192.png" />
 
       <link rel="preconnect" href="https://static.parastorage.com" />
 
