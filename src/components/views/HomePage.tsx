@@ -323,14 +323,14 @@ export default function HomePage() {
       {/* Lightbox Modal */}
       {selectedImage && (
         <motion.div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4 overflow-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
-            className="relative max-w-2xl w-full max-h-[70vh]"
+            className="relative max-w-2xl w-full my-auto"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
@@ -339,7 +339,7 @@ export default function HomePage() {
             <Image
               src={selectedImage}
               alt="확대된 갤러리 이미지"
-              className="w-full h-full object-contain rounded-lg"
+              className="w-full h-auto object-contain rounded-lg"
               width={800}
             />
             {/* Close Button */}
