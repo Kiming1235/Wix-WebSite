@@ -293,7 +293,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
-                className="relative h-64 rounded-lg overflow-hidden cursor-pointer group"
+                className="relative aspect-square rounded-lg overflow-hidden cursor-pointer group"
                 onClick={() => setSelectedImage(image.src)}
               >
                 <Image
