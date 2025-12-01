@@ -14,6 +14,10 @@ export default function HomePage() {
 
   const galleryImages = [
     {
+      src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
+      alt: '대한카고크레인 크레인 작업 - 건설 현장'
+    },
+    {
       src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg',
       alt: '대한카고크레인 작업 현장 1'
     },
