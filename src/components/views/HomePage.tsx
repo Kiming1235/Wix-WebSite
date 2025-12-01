@@ -339,7 +339,7 @@ export default function HomePage() {
             <Image
               src={selectedImage}
               alt="확대된 갤러리 이미지"
-              className="w-full h-full object-contain rounded-lg"
+              className="w-full h-full object-contain rounded-lg my-8"
               width={1200}
             />
             {/* Close Button */}
