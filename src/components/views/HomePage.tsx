@@ -330,7 +330,7 @@ export default function HomePage() {
           onClick={() => setSelectedImage(null)}
         >
           <motion.div
-            className="relative w-full max-w-4xl max-h-[90vh] flex items-center justify-center"
+            className="relative w-full max-w-2xl max-h-[80vh] flex items-center justify-center"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
