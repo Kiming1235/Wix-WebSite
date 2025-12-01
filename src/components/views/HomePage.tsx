@@ -285,7 +285,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Grid Gallery */}
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 lg:grid-cols-5 gap-3">
             {galleryImages.map((image, index) => (
               <motion.div
                 key={index}
