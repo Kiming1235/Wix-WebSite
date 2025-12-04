@@ -238,7 +238,7 @@ export default function HomePage() {
               <p
                 className="text-secondary-foreground writing-mode-vertical-rl writing-mode-horizontal-tb indent-0.5 normal-case not-italic no-underline font-bold text-xl font-heading m-0 text-center mt-0 mr-0 mb-6 ml-[5px]"
                 dir="ltr">
-                대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
+                삼다8476대한크레인, 대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다.
               </p>
               <p
                 className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 w-full my-0 mx-auto text-center"
