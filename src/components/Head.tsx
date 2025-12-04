@@ -2,8 +2,8 @@ export const Head = () => {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "대한크레인",
-    alternateName: "Daehan Crane",
+    name: "삼다8476대한크레인, 대한카고크레인",
+    alternateName: "Daehan Cargo Crane",
     description:
       "대구광역시 동구 신암남로 145(신암동)에 위치한 중량물·산업 장비·건설 자재 운송 전문 기업입니다. 안전하고 효율적인 크레인 연계 운송 솔루션을 제공합니다.",
     url: "https://www.daehancargocrane.com",
@@ -24,16 +24,16 @@ export const Head = () => {
 
   return (
     <>
-      <title>대한크레인 | 중량물·산업 장비 운송 전문 기업</title>
+      <title>삼다8476대한크레인, 대한카고크레인 | 중량물·산업 장비 운송 전문 기업</title>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta
         name="description"
-        content="대한크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다."
+        content="삼다8476대한크레인, 대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다."
       />
       <meta
         name="keywords"
-        content="대한크레인, 경산크레인, 대구크레인, 경주크레인, 구미크레인, 성주크레인, 중량물 운송, 산업 장비 운송"
+        content="삼다8476대한크레인, 대한카고크레인, 경산크레인, 대구크레인, 경주크레인, 구미크레인, 성주크레인, 중량물 운송, 산업 장비 운송"
       />
       <meta
         name="naver-site-verification"
@@ -87,8 +87,8 @@ export const Head = () => {
       {/* ✅ Open Graph (SNS / 네이버 프리뷰용) */}
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://www.daehancargocrane.com" />
-      <meta property="og:title" content="대한크레인 | 중량물·산업 장비 운송 전문 기업" />
-      <meta property="og:description" content="대한크레인은 대구·경산·경주·구미·성주 지역에서 중량물, 산업 장비, 건설 자재 운송을 전문으로 하는 기업입니다." />
+      <meta property="og:title" content="삼다8476대한크레인, 대한카고크레인 | 중량물·산업 장비 운송 전문 기업" />
+      <meta property="og:description" content="삼다8476대한크레인, 대한카고크레인은 대구·경산·경주·구미·성주 지역에서 중량물, 산업 장비, 건설 자재 운송을 전문으로 하는 기업입니다." />
       <meta property="og:image" content="https://www.daehancargocrane.com/favicon-192.png" />
 
       <link rel="preconnect" href="https://static.parastorage.com" />
