@@ -43,6 +43,10 @@ export const Head = () => {
         name="naver-site-verification"
         content="c11cba63c6d7d068d4ad3d7e96912b1392370252"
       />
+      <meta
+        name="google-site-verification"
+        content="V_Dy82B1500RiHa5FShJi7-d07BCH05W-UTlqrYMLLs"
+      />
 
       {/* Favicon - Standard */}
       <link rel="icon" href="/favicon.ico" />
