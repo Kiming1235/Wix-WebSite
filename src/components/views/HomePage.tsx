@@ -2,15 +2,18 @@ import { motion } from 'framer-motion';
 import { Image } from '@/components/ui/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, X } from 'lucide-react';
+import { Truck, Package, Building, Wrench, Shield, Clock, Target, Phone, MapPin, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export default function HomePage() {
   const [services, setServices] = useState<Services[]>([]);
   const [strengths, setStrengths] = useState<CompanyStrengths[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number>(-1);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
 
   const galleryImages = [
     {
@@ -184,7 +187,58 @@ export default function HomePage() {
   const displayServices = services.length > 0 ? services : defaultServices;
   const displayStrengths = strengths.length > 0 ? strengths : defaultStrengths;
 
+  const handleImageClick = (index: number) => {
+    setSelectedImage(galleryImages[index].src);
+    setSelectedImageIndex(index);
+  };
 
+  const handlePrevImage = () => {
+    if (selectedImageIndex > 0) {
+      const newIndex = selectedImageIndex - 1;
+      setSelectedImage(galleryImages[newIndex].src);
+      setSelectedImageIndex(newIndex);
+    }
+  };
+
+  const handleNextImage = () => {
+    if (selectedImageIndex < galleryImages.length - 1) {
+      const newIndex = selectedImageIndex + 1;
+      setSelectedImage(galleryImages[newIndex].src);
+      setSelectedImageIndex(newIndex);
+    }
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.changedTouches[0].screenX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    touchEndX.current = e.changedTouches[0].screenX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    const swipeThreshold = 50;
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left - show next image
+        handleNextImage();
+      } else {
+        // Swiped right - show previous image
+        handlePrevImage();
+      }
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'ArrowLeft') {
+      handlePrevImage();
+    } else if (e.key === 'ArrowRight') {
+      handleNextImage();
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -338,7 +392,7 @@ export default function HomePage() {
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 viewport={{ once: true }}
                 className="relative aspect-square rounded-lg overflow-hidden cursor-pointer group"
-                onClick={() => setSelectedImage(image.src)}
+                onClick={() => handleImageClick(index)}
               >
                 <Image
                   src={image.src}
@@ -372,6 +426,8 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setSelectedImage(null)}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
         >
           <motion.div
             className="relative w-full h-full flex items-center justify-center"
@@ -379,6 +435,8 @@ export default function HomePage() {
             animate={{ scale: 1 }}
             exit={{ scale: 0.9 }}
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
           >
             <Image
               src={selectedImage}
@@ -386,6 +444,39 @@ export default function HomePage() {
               className="max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg"
               width={1200}
             />
+            
+            {/* Previous Button */}
+            {selectedImageIndex > 0 && (
+              <motion.button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePrevImage();
+                }}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors z-10"
+                aria-label="Previous image"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </motion.button>
+            )}
+
+            {/* Next Button */}
+            {selectedImageIndex < galleryImages.length - 1 && (
+              <motion.button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleNextImage();
+                }}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-primary/80 hover:bg-primary text-background p-2 rounded-full transition-colors z-10"
+                aria-label="Next image"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <ChevronRight className="w-6 h-6" />
+              </motion.button>
+            )}
+
             {/* Close Button */}
             <button
               onClick={() => setSelectedImage(null)}
@@ -394,6 +485,11 @@ export default function HomePage() {
             >
               <X className="w-6 h-6" />
             </button>
+
+            {/* Image Counter */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-4 py-2 rounded-full text-sm font-paragraph">
+              {selectedImageIndex + 1} / {galleryImages.length}
+            </div>
           </motion.div>
         </motion.div>
       )}
