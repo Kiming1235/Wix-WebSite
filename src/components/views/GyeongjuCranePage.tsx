@@ -1,8 +1,14 @@
 import RegionalPageLayout from '@/components/RegionalPageLayout';
 import { RegionalHead } from '@/components/RegionalHead';
 
-export default function GyeongjuCranePage() {
-  const galleryImages = [
+const REGION_CONFIG = {
+  regionName: '경주',
+  regionTitle: '경주 크레인 서비스 | 삼다8476대한크레인',
+  keywords: '경주크레인, 경주중량물운송, 경주산업장비운송, 경주건설자재운송, 경주크레인배차, 경주크레인서비스',
+  address: '대구광역시 동구 신암남로 145 (신암동)',
+  phone: '010-2332-4822',
+  url: 'https://www.daehancargocrane.com/gyeongju-crane',
+  galleryImages: [
     {
       src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
       alt: '경주크레인 작업 현장 1'
@@ -27,24 +33,26 @@ export default function GyeongjuCranePage() {
       src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg',
       alt: '경주크레인 작업 현장 6'
     },
-  ];
+  ],
+};
 
+export default function GyeongjuCranePage() {
   return (
     <>
       <RegionalHead
-        regionName="경주"
-        regionTitle="경주 크레인 서비스 | 삼다8476대한크레인"
-        keywords="경주크레인, 경주중량물운송, 경주산업장비운송, 경주건설자재운송, 경주크레인배차, 경주크레인서비스"
-        address="대구광역시 동구 신암남로 145 (신암동)"
-        phone="010-2332-4822"
-        url="https://www.daehancargocrane.com/gyeongju-crane"
+        regionName={REGION_CONFIG.regionName}
+        regionTitle={REGION_CONFIG.regionTitle}
+        keywords={REGION_CONFIG.keywords}
+        address={REGION_CONFIG.address}
+        phone={REGION_CONFIG.phone}
+        url={REGION_CONFIG.url}
       />
       <RegionalPageLayout
-        regionName="경주"
-        regionTitle="경주 크레인 서비스"
-        address="대구광역시 동구 신암남로 145 (신암동)"
-        phone="010-2332-4822"
-        galleryImages={galleryImages}
+        regionName={REGION_CONFIG.regionName}
+        regionTitle={REGION_CONFIG.regionTitle}
+        address={REGION_CONFIG.address}
+        phone={REGION_CONFIG.phone}
+        galleryImages={REGION_CONFIG.galleryImages}
       />
     </>
   );

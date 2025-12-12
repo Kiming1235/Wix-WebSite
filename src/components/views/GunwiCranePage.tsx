@@ -1,8 +1,14 @@
 import RegionalPageLayout from '@/components/RegionalPageLayout';
 import { RegionalHead } from '@/components/RegionalHead';
 
-export default function GunwiCranePage() {
-  const galleryImages = [
+const REGION_CONFIG = {
+  regionName: '군위',
+  regionTitle: '군위 크레인 서비스 | 삼다8476대한크레인',
+  keywords: '군위크레인, 군위중량물운송, 군위산업장비운송, 군위건설자재운송, 군위크레인배차, 군위크레인서비스',
+  address: '대구광역시 동구 신암남로 145 (신암동)',
+  phone: '010-2332-4822',
+  url: 'https://www.daehancargocrane.com/gunwi-crane',
+  galleryImages: [
     {
       src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
       alt: '군위크레인 작업 현장 1'
@@ -27,24 +33,26 @@ export default function GunwiCranePage() {
       src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg',
       alt: '군위크레인 작업 현장 6'
     },
-  ];
+  ],
+};
 
+export default function GunwiCranePage() {
   return (
     <>
       <RegionalHead
-        regionName="군위"
-        regionTitle="군위 크레인 서비스 | 삼다8476대한크레인"
-        keywords="군위크레인, 군위중량물운송, 군위산업장비운송, 군위건설자재운송, 군위크레인배차, 군위크레인서비스"
-        address="대구광역시 동구 신암남로 145 (신암동)"
-        phone="010-2332-4822"
-        url="https://www.daehancargocrane.com/gunwi-crane"
+        regionName={REGION_CONFIG.regionName}
+        regionTitle={REGION_CONFIG.regionTitle}
+        keywords={REGION_CONFIG.keywords}
+        address={REGION_CONFIG.address}
+        phone={REGION_CONFIG.phone}
+        url={REGION_CONFIG.url}
       />
       <RegionalPageLayout
-        regionName="군위"
-        regionTitle="군위 크레인 서비스"
-        address="대구광역시 동구 신암남로 145 (신암동)"
-        phone="010-2332-4822"
-        galleryImages={galleryImages}
+        regionName={REGION_CONFIG.regionName}
+        regionTitle={REGION_CONFIG.regionTitle}
+        address={REGION_CONFIG.address}
+        phone={REGION_CONFIG.phone}
+        galleryImages={REGION_CONFIG.galleryImages}
       />
     </>
   );
