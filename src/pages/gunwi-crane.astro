@@ -1,31 +1,20 @@
 ---
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import RegionalHead from '@/components/views/RegionalHead';
-// import GunwiCranePage from '@/components/views/GunwiCranePage';
+import GunwiCranePage from '@/components/views/GunwiCranePage';
+import { Head } from '@/components/Head';
 ---
 
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <RegionalHead
-      regionName="군위군"
-      regionTitle="군위크레인 | 군위카고크레인 전문 대한카고크레인"
-      url="https://www.daehancargocrane.com/gunwi-crane"
-      keywords="군위크레인, 군위카고크레인, 경산크레인, 대구크레인, 경주크레인, 청도크레인, 영천크레인"
-      address="신암남로 145"
-      phone="010-2332-4822"
-      ogImage="/images/gunwi-crane.jpg"
-      addressRegion="경상북도"
-      areaServed={["군위군","대구광역시","영천시"]}
-    />
+    <Head />
   </head>
   <body>
     <div class="min-h-screen bg-background">
       <Header currentPath="/gunwi-crane" />
       <main class="pt-20">
-        <!-- <GunwiCranePage client:load /> -->
-        <!-- TODO: 본문 컴포넌트 또는 섹션 추가 -->
+        <GunwiCranePage client:load />
       </main>
       <Footer />
     </div>

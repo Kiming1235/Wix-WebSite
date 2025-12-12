@@ -1,31 +1,20 @@
 ---
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import RegionalHead from '@/components/views/RegionalHead';
-// import GyeongjuCranePage from '@/components/views/GyeongjuCranePage';
+import GyeongjuCranePage from '@/components/views/GyeongjuCranePage';
+import { Head } from '@/components/Head';
 ---
 
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <RegionalHead
-      regionName="경주시"
-      regionTitle="경주크레인 | 경주카고크레인 전문 대한카고크레인"
-      url="https://www.daehancargocrane.com/gyeongju-crane"
-      keywords="경주크레인, 경주카고크레인, 경산크레인, 대구크레인, 청도크레인, 군위크레인, 영천크레인"
-      address="신암남로 145"
-      phone="010-2332-4822"
-      ogImage="/images/gyeongju-crane.jpg"
-      addressRegion="경상북도"
-      areaServed={["경주시","영천시","경산시"]}
-    />
+    <Head />
   </head>
   <body>
     <div class="min-h-screen bg-background">
       <Header currentPath="/gyeongju-crane" />
       <main class="pt-20">
-        <!-- <GyeongjuCranePage client:load /> -->
-        <!-- TODO: 본문 컴포넌트 또는 섹션 추가 -->
+        <GyeongjuCranePage client:load />
       </main>
       <Footer />
     </div>

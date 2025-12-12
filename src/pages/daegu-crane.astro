@@ -1,31 +1,20 @@
 ---
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import RegionalHead from '@/components/views/RegionalHead';
-// import DaeguCranePage from '@/components/views/DaeguCranePage';
+import DaeguCranePage from '@/components/views/DaeguCranePage';
+import { Head } from '@/components/Head';
 ---
 
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <RegionalHead
-      regionName="대구광역시"
-      regionTitle="대구크레인 | 대구카고크레인 전문 대한카고크레인"
-      url="https://www.daehancargocrane.com/daegu-crane"
-      keywords="대구크레인, 대구카고크레인, 경산크레인, 경주크레인, 청도크레인, 군위크레인, 영천크레인"
-      address="신암남로 145"
-      phone="010-2332-4822"
-      ogImage="/images/daegu-crane.jpg"
-      addressRegion="대구광역시"
-      areaServed={["대구광역시","경산시","청도군"]}
-    />
+    <Head />
   </head>
   <body>
     <div class="min-h-screen bg-background">
       <Header currentPath="/daegu-crane" />
       <main class="pt-20">
-        <!-- <DaeguCranePage client:load /> -->
-        <!-- TODO: 본문 컴포넌트 또는 섹션 추가 -->
+        <DaeguCranePage client:load />
       </main>
       <Footer />
     </div>
