@@ -55,6 +55,8 @@ export default function GyeongjuCranePage() {
         phone={REGION_CONFIG.phone}
         galleryImages={REGION_CONFIG.galleryImages}
         customDescription={REGION_CONFIG.customDescription}
+        showServices={true}
+        showStrengths={true}
       />
     </>
   );
