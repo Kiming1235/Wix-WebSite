@@ -34,7 +34,6 @@ export default function GyeongsanCranePage() {
       <RegionalHead
         regionName="경산"
         regionTitle="경산 크레인 서비스 | 삼다8476대한크레인"
-        description="경산 지역의 모든 건설 현장, 산업 시설, 물류 센터에서 필요한 크레인 서비스를 제공합니다. 중량물 운송부터 정밀한 장비 설치까지 경산 지역 전문가 팀이 안전하고 효율적인 솔루션을 제공합니다."
         keywords="경산크레인, 경산중량물운송, 경산산업장비운송, 경산건설자재운송, 경산크레인배차, 경산크레인서비스"
         address="대구광역시 동구 신암남로 145 (신암동)"
         phone="010-2332-4822"
@@ -43,7 +42,6 @@ export default function GyeongsanCranePage() {
       <RegionalPageLayout
         regionName="경산"
         regionTitle="경산 크레인 서비스"
-        description="경산 지역의 모든 건설 현장, 산업 시설, 물류 센터에서 필요한 크레인 서비스를 제공합니다. 중량물 운송부터 정밀한 장비 설치까지 경산 지역 전문가 팀이 안전하고 효율적인 솔루션을 제공합니다."
         address="대구광역시 동구 신암남로 145 (신암동)"
         phone="010-2332-4822"
         galleryImages={galleryImages}

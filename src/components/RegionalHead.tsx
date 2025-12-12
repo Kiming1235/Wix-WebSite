@@ -1,7 +1,6 @@
 interface RegionalHeadProps {
   regionName: string;
   regionTitle: string;
-  description: string;
   keywords: string;
   address: string;
   phone: string;
@@ -11,12 +10,13 @@ interface RegionalHeadProps {
 export const RegionalHead = ({
   regionName,
   regionTitle,
-  description,
   keywords,
   address,
   phone,
   url,
 }: RegionalHeadProps) => {
+  // 지역명에 맞게 자동으로 소개 문구 생성
+  const description = `${regionName}크레인, ${regionName}카고크레인 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다.`;
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",

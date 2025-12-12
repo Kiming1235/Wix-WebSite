@@ -8,7 +8,6 @@ import { useState, useRef, ReactNode } from 'react';
 interface RegionalPageLayoutProps {
   regionName: string;
   regionTitle: string;
-  description: string;
   address: string;
   phone: string;
   galleryImages: Array<{ src: string; alt: string }>;
@@ -19,13 +18,14 @@ interface RegionalPageLayoutProps {
 export default function RegionalPageLayout({
   regionName,
   regionTitle,
-  description,
   address,
   phone,
   galleryImages,
   heroImage = 'https://static.wixstatic.com/media/6820d4_25f1507fa06d4d2f910f93c63873a9ca~mv2.png?originWidth=1920&originHeight=1024',
   children
 }: RegionalPageLayoutProps) {
+  // 지역명에 맞게 자동으로 소개 문구 생성
+  const description = `${regionName}크레인, ${regionName}카고크레인 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다.`;
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState<number>(-1);
   const touchStartX = useRef<number>(0);
