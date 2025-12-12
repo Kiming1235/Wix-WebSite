@@ -1,0 +1,30 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import CheongdoCranePage from '@/components/views/CheongdoCranePage';
+import { Head } from '@/components/Head';
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <Head />
+    <title>청도크레인 | 청도카고크레인 전문 대한카고크레인</title>
+    <meta name="description" content="청도크레인, 청도카고크레인 전문 대한카고크레인. 청도 전지역 크레인 임대, 카고크레인 배차, 반나절·일·월 단위 임대 가능. 숙련 기사 즉시 출동." />
+    <meta name="keywords" content="청도크레인, 청도카고크레인, 경산크레인, 대구크레인, 경주크레인, 군위크레인, 영천크레인" />
+  </head>
+  <body>
+    <div class="min-h-screen bg-background">
+      <Header currentPath="/cheongdo-crane" />
+      <main class="pt-20">
+        <CheongdoCranePage client:load />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '@/styles/global.css';
+  @import '@/styles/fonts.css';
+</style>

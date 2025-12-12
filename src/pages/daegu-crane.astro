@@ -1,0 +1,30 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import DaeguCranePage from '@/components/views/DaeguCranePage';
+import { Head } from '@/components/Head';
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <Head />
+    <title>대구크레인 | 대구카고크레인 전문 대한카고크레인</title>
+    <meta name="description" content="대구크레인, 대구카고크레인 전문 대한카고크레인. 대구 전지역 크레인 임대, 스카이차·카고크레인 배차 전문. 24시간 즉시 배차, 숙련 기사 상시 대기." />
+    <meta name="keywords" content="대구크레인, 대구카고크레인, 경산크레인, 경주크레인, 청도크레인, 군위크레인, 영천크레인" />
+  </head>
+  <body>
+    <div class="min-h-screen bg-background">
+      <Header currentPath="/daegu-crane" />
+      <main class="pt-20">
+        <DaeguCranePage client:load />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '@/styles/global.css';
+  @import '@/styles/fonts.css';
+</style>
