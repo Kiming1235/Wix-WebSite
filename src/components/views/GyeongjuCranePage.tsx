@@ -8,6 +8,7 @@ const REGION_CONFIG = {
   address: '대구광역시 동구 신암남로 145 (신암동)',
   phone: '010-2332-4822',
   url: 'https://www.daehancargocrane.com/gyeongju-crane',
+  customDescription: '역사와 문화의 도시 경주에서 다양한 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공합니다. 경주 크레인을 비롯해 안강·건천·외동·강동 등 경주 전역의 현장 특성에 맞춘 전문 장비를 활용하여, 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.',
   galleryImages: [
     {
       src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
@@ -53,6 +54,7 @@ export default function GyeongjuCranePage() {
         address={REGION_CONFIG.address}
         phone={REGION_CONFIG.phone}
         galleryImages={REGION_CONFIG.galleryImages}
+        customDescription={REGION_CONFIG.customDescription}
       />
     </>
   );
