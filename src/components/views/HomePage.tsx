@@ -579,7 +579,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <Phone className="w-12 h-12 mx-auto text-primary mb-4" />
+              <Phone className="w-12 h-12 mx-auto text-primary mb-4 fill-color-11" />
               <h3 className="text-xl font-heading font-semibold mb-2">연락처</h3>
               <a 
                 href="tel:010-2332-4822" 

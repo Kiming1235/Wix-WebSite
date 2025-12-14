@@ -10,18 +10,6 @@ const { currentPath = '/' } = Astro.props;
 
 const navigation = [
   { name: '홈', href: '/' },
-  { 
-    name: '지역별 서비스', 
-    href: '#',
-    submenu: [
-      { name: '대구', href: '/daegu-crane' },
-      { name: '경주', href: '/gyeongju-crane' },
-      { name: '경산', href: '/gyeongsan-crane' },
-      { name: '영천', href: '/yeongcheon-crane' },
-      { name: '청도', href: '/cheongdo-crane' },
-      { name: '군위', href: '/gunwi-crane' },
-    ]
-  },
   { name: '연락처', href: '/contact' },
 ];
 ---
@@ -37,34 +25,16 @@ const navigation = [
       {/* Desktop Navigation */}
       <div class="hidden md:flex items-center space-x-8">
         {navigation.map((item) => (
-          <div class="relative group">
-            <a
-              href={item.href}
-              class={`font-paragraph transition-colors ${
-                currentPath === item.href
-                  ? 'text-primary'
-                  : 'text-foreground hover:text-primary'
-              }`}
-            >
-              {item.name}
-            </a>
-            {item.submenu && (
-              <div class="absolute left-0 mt-0 w-48 bg-background border border-secondary/20 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                {item.submenu.map((subitem) => (
-                  <a
-                    href={subitem.href}
-                    class={`block px-4 py-2 font-paragraph text-sm transition-colors first:rounded-t-md last:rounded-b-md ${
-                      currentPath === subitem.href
-                        ? 'bg-secondary/20 text-primary'
-                        : 'text-foreground hover:bg-secondary/10 hover:text-primary'
-                    }`}
-                  >
-                    {subitem.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </div>
+          <a
+            href={item.href}
+            class={`font-paragraph transition-colors ${
+              currentPath === item.href
+                ? 'text-primary'
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {item.name}
+          </a>
         ))}
       </div>
 
@@ -92,34 +62,16 @@ const navigation = [
     <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-secondary/20">
       <div class="flex flex-col space-y-4 pt-4">
         {navigation.map((item) => (
-          <>
-            <a
-              href={item.href}
-              class={`font-paragraph transition-colors ${
-                currentPath === item.href
-                  ? 'text-primary'
-                  : 'text-foreground hover:text-primary'
-              }`}
-            >
-              {item.name}
-            </a>
-            {item.submenu && (
-              <div class="pl-4 flex flex-col space-y-2">
-                {item.submenu.map((subitem) => (
-                  <a
-                    href={subitem.href}
-                    class={`font-paragraph text-sm transition-colors ${
-                      currentPath === subitem.href
-                        ? 'text-primary'
-                        : 'text-foreground hover:text-primary'
-                    }`}
-                  >
-                    {subitem.name}
-                  </a>
-                ))}
-              </div>
-            )}
-          </>
+          <a
+            href={item.href}
+            class={`font-paragraph transition-colors ${
+              currentPath === item.href
+                ? 'text-primary'
+                : 'text-foreground hover:text-primary'
+            }`}
+          >
+            {item.name}
+          </a>
         ))}
         <a href="tel:010-2332-4822" class="pt-2">
           <Button size="sm" class="bg-primary text-primary-foreground hover:bg-primary/90 w-full">
