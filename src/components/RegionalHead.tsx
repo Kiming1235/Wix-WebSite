@@ -2,21 +2,29 @@ interface RegionalHeadProps {
   regionName: string;
   regionTitle: string;
   keywords: string;
-  address: string;
+  streetAddress: string;
+  addressRegion: string;
   phone: string;
   url: string;
+  ogImage?: string;
+  areaServed?: string[];
+  canonical?: string;
 }
 
 export const RegionalHead = ({
   regionName,
   regionTitle,
   keywords,
-  address,
+  streetAddress,
+  addressRegion,
   phone,
   url,
+  ogImage = "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
+  areaServed = ["KR"],
+  canonical,
 }: RegionalHeadProps) => {
   // 지역명에 맞게 자동으로 소개 문구 생성
-  const description = `${regionName}크레인, ${regionName}카고크레인 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다.`;
+  const description = `${regionName} 크레인, ${regionName} 카고크레인 중량물, 산업 장비, 건설 자재 운송 전문 기업으로, 안전하고 효율적인 맞춤형 운송 솔루션을 제공합니다.`;
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -24,17 +32,17 @@ export const RegionalHead = ({
     alternateName: `Daehan Cargo Crane ${regionName}`,
     description: description,
     url: url,
-    image: "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
+    image: ogImage,
     telephone: phone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: address,
+      streetAddress: streetAddress,
       addressLocality: regionName,
-      addressRegion: "대구광역시",
+      addressRegion: addressRegion,
       postalCode: "",
       addressCountry: "KR",
     },
-    areaServed: "KR",
+    areaServed: areaServed,
     priceRange: "$",
   };
 
@@ -45,18 +53,7 @@ export const RegionalHead = ({
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta
-        name="naver-site-verification"
-        content="4775914a9f3ec89f8319d68d878db78083e33fc2"
-      />
-      <meta
-        name="naver-site-verification"
-        content="c11cba63c6d7d068d4ad3d7e96912b1392370252"
-      />
-      <meta
-        name="google-site-verification"
-        content="V_Dy82B1500RiHa5FShJi7-d07BCH05W-UTlqrYMLLs"
-      />
+      {canonical && <link rel="canonical" href={canonical} />}
 
       {/* Favicon - Standard */}
       <link rel="icon" href="/favicon.ico" />
@@ -103,7 +100,7 @@ export const RegionalHead = ({
       <meta property="og:url" content={url} />
       <meta property="og:title" content={regionTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content="https://www.daehancargocrane.com/favicon-192.png" />
+      <meta property="og:image" content={ogImage} />
 
       <link rel="preconnect" href="https://static.parastorage.com" />
 
