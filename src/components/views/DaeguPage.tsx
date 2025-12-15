@@ -277,27 +277,68 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none z-20"></div>
       </section>
+
       {/* Company Introduction */}
       <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-4xl font-heading font-bold mb-6">{regionName}</h1>
-            <div className="max-w-4xl mx-auto">
-              <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
-                대구 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
-              </p>
+            <h1 className="text-4xl font-heading font-bold mb-12 text-center">{regionName}</h1>
+            
+            {/* Two-column layout with image and text */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="rounded-lg overflow-hidden"
+              >
+                <Image
+                  src="https://static.wixstatic.com/media/6820d4_0fe09a829d8045aea07a704f06c68633~mv2.png"
+                  alt="회사소개 - 대한카고크레인"
+                  className="w-full h-auto object-cover rounded-lg"
+                  width={600}
+                />
+              </motion.div>
+
+              {/* Text Content */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                viewport={{ once: true }}
+                className="space-y-6"
+              >
+                {/* Common Description */}
+                <div>
+                  <h2 className="text-2xl font-heading font-bold mb-4">회사소개</h2>
+                  <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
+                    대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
+                  </p>
+                </div>
+
+                {/* Regional Description */}
+                <div>
+                  <h3 className="text-xl font-heading font-semibold mb-3">{regionName} 지역 서비스</h3>
+                  <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
+                    대구 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
         {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
+
       {/* Main Services */}
       <section className="relative py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -357,6 +398,7 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
           </div>
         </div>
       </section>
+
       {/* Gallery Section */}
       <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -477,6 +519,7 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
           </motion.div>
         </motion.div>
       )}
+
       {/* Company Strengths */}
       <section className="relative py-24 px-6">
         <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-dark-gray to-transparent pointer-events-none"></div>
@@ -537,6 +580,7 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
+
       {/* Contact Section */}
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
