@@ -288,6 +288,11 @@ export default function YeongcheonPage({ regionName = '영천', regionDescriptio
             viewport={{ once: true }}
           >
             <h1 className="text-4xl font-heading font-bold mb-6">{regionName}</h1>
+            <div className="max-w-4xl mx-auto mb-8">
+              <p className="font-paragraph text-primary text-lg font-semibold">
+                {regionName} 전 지역 현장 특성에 맞춘 장비로 안전하고 효율적인 운송을 제공합니다.
+              </p>
+            </div>
             <div className="max-w-4xl mx-auto">
               <p
                 className="font-paragraph text-secondary-foreground text-base writing-mode-vertical-rl writing-mode-horizontal-tb [text-shadow:none] m-0 w-full my-0 mx-auto text-center"
