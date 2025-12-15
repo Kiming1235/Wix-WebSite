@@ -7,12 +7,12 @@ import { BaseCrudService } from '@/integrations';
 import { Services, CompanyStrengths } from '@/entities';
 import { useEffect, useState, useRef } from 'react';
 
-interface GyeongjuPageProps {
+interface CheongdoPageProps {
   regionName?: string;
   regionDescription?: string;
 }
 
-export default function GyeongjuPage({ regionName = '경주', regionDescription }: GyeongjuPageProps) {
+export default function CheongdoPage({ regionName = '청도', regionDescription }: CheongdoPageProps) {
   const [services, setServices] = useState<Services[]>([]);
   const [strengths, setStrengths] = useState<CompanyStrengths[]>([]);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -21,102 +21,30 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
   const touchEndX = useRef<number>(0);
 
   const galleryImages = [
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
-      alt: '경주 크레인 작업 - 건설 현장'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg',
-      alt: '경주 크레인 작업 현장 1'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_a7c6fd8325564b148b6da8f30ebb37be~mv2.jpg',
-      alt: '경주 크레인 작업 현장 2'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_a82e1c0f6008438da039f08ba1155f90~mv2.jpg',
-      alt: '경주 크레인 작업 현장 3'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_658942be47c843f09ee467b874a84f09~mv2.jpg',
-      alt: '경주 크레인 작업 현장 4'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg',
-      alt: '경주 크레인 작업 현장 5'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg',
-      alt: '경주 크레인 작업 현장 6'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg',
-      alt: '경주 크레인 작업 현장 7'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_d9967036235e430089fc18621661705e~mv2.jpg',
-      alt: '경주 크레인 작업 현장 8'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_5302d235bca14224979f68d0a4df5d05~mv2.jpg',
-      alt: '경주 크레인 작업 현장 9'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_4b4a4f17c36b42eaad73d8c14d83431d~mv2.jpg',
-      alt: '경주 크레인 작업 현장 10'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_814daae2f8cf472aa17d385ef62bc3c8~mv2.jpg',
-      alt: '경주 크레인 작업 현장 - 건설 현장'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_c58c26e1d39548328222b2aa54cce8c1~mv2.jpg',
-      alt: '경주 크레인 자재 운반 작업 - 석재 운송'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_4a76c5a7343042018acb92e831ea50f7~mv2.jpg',
-      alt: '경주 크레인 대형 석재 운반 작업'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_a6d63a2f9fe04eb6b908f536f37d9192~mv2.jpeg',
-      alt: '경주 크레인 작업 - 중량물 운반'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_c6e57b6001b4421eb9eceda11a24c1fa~mv2.jpeg',
-      alt: '경주 크레인 산악 지역 작업 현장'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_68fa81b3d0fe42ae9e231b51b65cba78~mv2.jpeg',
-      alt: '경주 크레인 크레인 타워 작업'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_9e9f78e30ffa49b5b140a42f2773aba0~mv2.jpeg',
-      alt: '경주 크레인 건설 현장 자재 운반'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_d11cf66412b9475e899f7e164bcd3014~mv2.jpeg',
-      alt: '경주 크레인 대형 목재 운반 작업'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_9a63e1839fb946c2bcb64a1453e8e7cd~mv2.jpeg',
-      alt: '경주 크레인 도시 지역 크레인 작업'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_c52fea20028348c79d6e77d0477f6e45~mv2.jpeg',
-      alt: '경주 크레인 파이프 운반 작업'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_a2b6bca564e64ba98734f824aaee699d~mv2.jpeg',
-      alt: '경주 크레인 실내 작업 현장'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_61be87a72ed84a719f5c68b708c99edb~mv2.jpeg',
-      alt: '경주 크레인 산악 지역 중량물 운반'
-    },
-    {
-      src: 'https://static.wixstatic.com/media/6820d4_021614c357984edab2601297a18c8145~mv2.jpeg',
-      alt: '경주 크레인 작업 - 정밀 운반'
-    }
+    { src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg', alt: '청도 크레인 작업 - 건설 현장' },
+    { src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg', alt: '청도 크레인 작업 현장 1' },
+    { src: 'https://static.wixstatic.com/media/6820d4_a7c6fd8325564b148b6da8f30ebb37be~mv2.jpg', alt: '청도 크레인 작업 현장 2' },
+    { src: 'https://static.wixstatic.com/media/6820d4_a82e1c0f6008438da039f08ba1155f90~mv2.jpg', alt: '청도 크레인 작업 현장 3' },
+    { src: 'https://static.wixstatic.com/media/6820d4_658942be47c843f09ee467b874a84f09~mv2.jpg', alt: '청도 크레인 작업 현장 4' },
+    { src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg', alt: '청도 크레인 작업 현장 5' },
+    { src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg', alt: '청도 크레인 작업 현장 6' },
+    { src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg', alt: '청도 크레인 작업 현장 7' },
+    { src: 'https://static.wixstatic.com/media/6820d4_d9967036235e430089fc18621661705e~mv2.jpg', alt: '청도 크레인 작업 현장 8' },
+    { src: 'https://static.wixstatic.com/media/6820d4_5302d235bca14224979f68d0a4df5d05~mv2.jpg', alt: '청도 크레인 작업 현장 9' },
+    { src: 'https://static.wixstatic.com/media/6820d4_4b4a4f17c36b42eaad73d8c14d83431d~mv2.jpg', alt: '청도 크레인 작업 현장 10' },
+    { src: 'https://static.wixstatic.com/media/6820d4_814daae2f8cf472aa17d385ef62bc3c8~mv2.jpg', alt: '청도 크레인 작업 - 건설 현장' },
+    { src: 'https://static.wixstatic.com/media/6820d4_c58c26e1d39548328222b2aa54cce8c1~mv2.jpg', alt: '청도 크레인 자재 운반 작업 - 석재 운송' },
+    { src: 'https://static.wixstatic.com/media/6820d4_4a76c5a7343042018acb92e831ea50f7~mv2.jpg', alt: '청도 크레인 대형 석재 운반 작업' },
+    { src: 'https://static.wixstatic.com/media/6820d4_a6d63a2f9fe04eb6b908f536f37d9192~mv2.jpeg', alt: '청도 크레인 작업 - 중량물 운반' },
+    { src: 'https://static.wixstatic.com/media/6820d4_c6e57b6001b4421eb9eceda11a24c1fa~mv2.jpeg', alt: '청도 크레인 산악 지역 작업 현장' },
+    { src: 'https://static.wixstatic.com/media/6820d4_68fa81b3d0fe42ae9e231b51b65cba78~mv2.jpeg', alt: '청도 크레인 크레인 타워 작업' },
+    { src: 'https://static.wixstatic.com/media/6820d4_9e9f78e30ffa49b5b140a42f2773aba0~mv2.jpeg', alt: '청도 크레인 건설 현장 자재 운반' },
+    { src: 'https://static.wixstatic.com/media/6820d4_d11cf66412b9475e899f7e164bcd3014~mv2.jpeg', alt: '청도 크레인 대형 목재 운반 작업' },
+    { src: 'https://static.wixstatic.com/media/6820d4_9a63e1839fb946c2bcb64a1453e8e7cd~mv2.jpeg', alt: '청도 크레인 도시 지역 크레인 작업' },
+    { src: 'https://static.wixstatic.com/media/6820d4_c52fea20028348c79d6e77d0477f6e45~mv2.jpeg', alt: '청도 크레인 파이프 운반 작업' },
+    { src: 'https://static.wixstatic.com/media/6820d4_a2b6bca564e64ba98734f824aaee699d~mv2.jpeg', alt: '청도 크레인 실내 작업 현장' },
+    { src: 'https://static.wixstatic.com/media/6820d4_61be87a72ed84a719f5c68b708c99edb~mv2.jpeg', alt: '청도 크레인 산악 지역 중량물 운반' },
+    { src: 'https://static.wixstatic.com/media/6820d4_021614c357984edab2601297a18c8145~mv2.jpeg', alt: '청도 크레인 작업 - 정밀 운반' }
   ];
 
   useEffect(() => {
@@ -126,66 +54,28 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
           BaseCrudService.getAll<Services>('services'),
           BaseCrudService.getAll<CompanyStrengths>('companystrengths')
         ]);
-        
         const sortedServices = servicesData.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         const sortedStrengths = strengthsData.items.sort((a, b) => (a.priorityOrder || 0) - (b.priorityOrder || 0));
-        
         setServices(sortedServices);
         setStrengths(sortedStrengths);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
     fetchData();
   }, []);
 
   const defaultServices = [
-    {
-      title: '중량물 운송',
-      description: '대형 중량물의 안전하고 신속한 운송 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=truck-transport-icon',
-      icon: Truck
-    },
-    {
-      title: '자재 운반',
-      description: '건설 현장 자재의 효율적인 운반 솔루션',
-      image: 'https://static.wixstatic.com/media/6820d4_41869dc2ff1e46309c274d78f621442b~mv2.png?id=material-transport-icon',
-      icon: Package
-    },
-    {
-      title: '장비·설비 이전',
-      description: '산업 장비 및 설비의 전문적인 이전 서비스',
-      image: 'https://static.wixstatic.com/media/6820d4_a7fc09449ff5488ca3ca62843afc17c4~mv2.png?id=equipment-relocation-icon',
-      icon: Building
-    },
-    {
-      title: '장비 연계 운송 지원',
-      description: '다양한 장비 연계를 통한 맞춤형 운송 지원',
-      image: 'https://static.wixstatic.com/media/6820d4_be75efdbf12a4da1af625e1c1b22f06c~mv2.png?id=equipment-support-icon',
-      icon: Wrench
-    }
+    { title: '중량물 운송', description: '대형 중량물의 안전하고 신속한 운송 서비스', image: 'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=truck-transport-icon', icon: Truck },
+    { title: '자재 운반', description: '건설 현장 자재의 효율적인 운반 솔루션', image: 'https://static.wixstatic.com/media/6820d4_41869dc2ff1e46309c274d78f621442b~mv2.png?id=material-transport-icon', icon: Package },
+    { title: '장비·설비 이전', description: '산업 장비 및 설비의 전문적인 이전 서비스', image: 'https://static.wixstatic.com/media/6820d4_a7fc09449ff5488ca3ca62843afc17c4~mv2.png?id=equipment-relocation-icon', icon: Building },
+    { title: '장비 연계 운송 지원', description: '다양한 장비 연계를 통한 맞춤형 운송 지원', image: 'https://static.wixstatic.com/media/6820d4_be75efdbf12a4da1af625e1c1b22f06c~mv2.png?id=equipment-support-icon', icon: Wrench }
   ];
 
   const defaultStrengths = [
-    {
-      title: '안전 우선',
-      description: '모든 작업에서 안전을 최우선으로 하는 시스템',
-      iconImage: 'https://static.wixstatic.com/media/6820d4_cdb85c16a4b0494085b50da8bc740180~mv2.png',
-      icon: Shield
-    },
-    {
-      title: '일정 준수',
-      description: '약속된 일정을 철저히 지키는 신뢰성',
-      iconImage: 'https://static.wixstatic.com/media/6820d4_ec73d53691cc409ab86a6b81fdda104f~mv2.png',
-      icon: Clock
-    },
-    {
-      title: '현장 맞춤 대응력',
-      description: '각 현장의 특성에 맞는 최적화된 솔루션 제공',
-      iconImage: 'https://static.wixstatic.com/media/6820d4_11181c3b812a4a8da75a7f842e015ba9~mv2.png',
-      icon: Target
-    }
+    { title: '안전 우선', description: '모든 작업에서 안전을 최우선으로 하는 시스템', iconImage: 'https://static.wixstatic.com/media/6820d4_cdb85c16a4b0494085b50da8bc740180~mv2.png', icon: Shield },
+    { title: '일정 준수', description: '약속된 일정을 철저히 지키는 신뢰성', iconImage: 'https://static.wixstatic.com/media/6820d4_ec73d53691cc409ab86a6b81fdda104f~mv2.png', icon: Clock },
+    { title: '현장 맞춤 대응력', description: '각 현장의 특성에 맞는 최적화된 솔루션 제공', iconImage: 'https://static.wixstatic.com/media/6820d4_11181c3b812a4a8da75a7f842e015ba9~mv2.png', icon: Target }
   ];
 
   const displayServices = services.length > 0 ? services : defaultServices;
@@ -224,22 +114,16 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
   const handleSwipe = () => {
     const swipeThreshold = 50;
     const diff = touchStartX.current - touchEndX.current;
-
     if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        handleNextImage();
-      } else {
-        handlePrevImage();
-      }
+      if (diff > 0) handleNextImage();
+      else handlePrevImage();
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      handlePrevImage();
-    } else if (e.key === 'ArrowRight') {
-      handleNextImage();
-    }
+    if (e.key === 'ArrowLeft') handlePrevImage();
+    else if (e.key === 'ArrowRight') handleNextImage();
+    else if (e.key === 'Escape') setSelectedImage(null);
   };
 
   return (
@@ -249,7 +133,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
         <div className="absolute inset-0 w-full h-full">
           <Image
             src="https://static.wixstatic.com/media/6820d4_25f1507fa06d4d2f910f93c63873a9ca~mv2.png?originWidth=1920&originHeight=1024"
-            alt="경주 크레인 작업 현장"
+            alt="청도 크레인 작업 현장"
             className="w-full h-full object-cover"
             width={1920}
           />
@@ -265,49 +149,51 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } }}
           >
-            경주 크레인&카고크레인
+            청도 크레인&카고크레인
           </motion.h1>
-          <motion.p
+          <motion.h2
             className="text-white font-geotica-w01-four-open font-normal whitespace-nowrap text-base mt-[15px] mr-0 mb-8 ml-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
-            dir="ltr">
+            dir="ltr"
+          >
             믿을 수 있는 중량물 운송 및 장비 연계 서비스
-          </motion.p>
+          </motion.h2>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-background pointer-events-none z-20"></div>
       </section>
+
       {/* Company Introduction */}
       <section className="relative py-24 px-6">
         <div className="max-w-[100rem] mx-auto">
           <motion.div
-            className="text-center mb-16"
+            className="mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl font-heading font-bold mb-6">{regionName}</h2>
+            {/* 🔻 여기 h1 → h2 로 변경 (중복 h1 방지) */}
+            <h2 className="text-4xl font-heading font-bold mb-12 text-center">{regionName}</h2>
+
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              {/* Common Description */}
               <div>
                 <p className="font-paragraph text-secondary-foreground text-2xl font-semibold leading-relaxed">
                   대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
                 </p>
               </div>
-
-              {/* Regional Description */}
               <div>
                 <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
-                  경주 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
+                  {regionDescription ??
+                    '청도 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.'}
                 </p>
               </div>
             </div>
           </motion.div>
         </div>
-        {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
+
       {/* Main Services */}
       <section className="relative py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -367,6 +253,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
           </div>
         </div>
       </section>
+
       {/* Gallery Section */}
       <section className="relative py-24 px-6 md:px-12 lg:px-20 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -379,7 +266,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
           >
             <h2 className="text-4xl font-heading font-bold mb-6">현장 갤러리</h2>
             <p className="text-lg font-paragraph text-secondary-foreground">
-              경주 크레인의 다양한 작업 현장을 확인하세요
+              청도 크레인의 다양한 작업 현장을 확인하세요
             </p>
           </motion.div>
 
@@ -442,7 +329,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
               className="max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg"
               width={1200}
             />
-            
+
             {selectedImageIndex > 0 && (
               <motion.button
                 onClick={(e) => {
@@ -487,6 +374,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
           </motion.div>
         </motion.div>
       )}
+
       {/* Company Strengths */}
       <section className="relative py-24 px-6">
         <div className="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-dark-gray to-transparent pointer-events-none"></div>
@@ -500,7 +388,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
           >
             <h2 className="text-4xl font-heading font-bold mb-6">우리의 강점</h2>
             <p className="text-lg font-paragraph text-secondary-foreground">
-              경주 크레인만의 차별화된 경쟁력
+              청도 크레인만의 차별화된 경쟁력
             </p>
           </motion.div>
 
@@ -547,6 +435,7 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
+
       {/* Contact Section */}
       <section className="py-24 px-6 bg-dark-gray">
         <div className="max-w-[100rem] mx-auto">
@@ -573,8 +462,8 @@ export default function GyeongjuPage({ regionName = '경주', regionDescription 
             >
               <Phone className="w-12 h-12 mx-auto text-primary mb-4 fill-color-11" />
               <h3 className="text-xl font-heading font-semibold mb-2">연락처</h3>
-              <a 
-                href="tel:010-2332-4822" 
+              <a
+                href="tel:010-2332-4822"
                 className="text-2xl font-paragraph text-primary hover:text-primary/80 transition-colors"
               >
                 010-2332-4822
