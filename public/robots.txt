@@ -3,7 +3,14 @@
 # 기본 규칙
 User-agent: *
 Allow: /
-Allow: /sitemap.xml
+Allow: /sitemap.xml$
+Allow: /gyeongsan
+Allow: /daegu
+Allow: /gyeongju
+Allow: /cheongdo
+Allow: /gunwi
+Allow: /yeongcheon
+
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
@@ -11,8 +18,7 @@ Disallow: /*?lightbox=
 Disallow: /*?*sort=
 Disallow: /*?*filter=
 Disallow: /*.json$
-Disallow: /*.xml$   # 다른 XML 크롤링 제한
-# Google은 Crawl-delay/Request-rate를 무시하므로 전역에서 사용 안 함
+Disallow: /*.xml$   # 다른 XML 크롤링 제한 (단, sitemap.xml은 예외)
 
 # Google
 User-agent: Googlebot
