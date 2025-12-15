@@ -607,7 +607,7 @@ export default function GyeongsanPage({ regionName = '경산', regionDescription
               <MapPin className="w-12 h-12 mx-auto text-primary mb-4" />
               <h3 className="text-xl font-heading font-semibold mb-2">위치</h3>
               <p className="text-base font-paragraph text-primary mb-4">
-                경상북도 경산시<br />(경산 지역)
+                대구광역시 동구 신암남로 145<br />(신암동)
               </p>
               <a href="/contact">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">

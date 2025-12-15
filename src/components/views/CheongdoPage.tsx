@@ -598,7 +598,7 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
               <MapPin className="w-12 h-12 mx-auto text-primary mb-4" />
               <h3 className="text-xl font-heading font-semibold mb-2">위치</h3>
               <p className="text-base font-paragraph text-primary mb-4">
-                경상북도 청도군<br />(청도 지역)
+                대구광역시 동구 신암남로 145<br />(신암동)
               </p>
               <a href="/contact">
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
