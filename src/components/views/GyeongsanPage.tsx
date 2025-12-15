@@ -293,10 +293,20 @@ export default function GyeongsanPage({ regionName = '경산', regionDescription
             viewport={{ once: true }}
           >
             <h1 className="text-4xl font-heading font-bold mb-6">{regionName}</h1>
-            <div className="max-w-4xl mx-auto">
-              <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
-                경산 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
-              </p>
+            <div className="max-w-3xl mx-auto text-center space-y-6">
+              {/* Common Description */}
+              <div>
+                <p className="font-paragraph text-secondary-foreground text-2xl font-semibold leading-relaxed">
+                  대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
+                </p>
+              </div>
+
+              {/* Regional Description */}
+              <div>
+                <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
+                  경산 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>

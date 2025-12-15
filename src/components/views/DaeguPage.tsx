@@ -294,7 +294,7 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
             <div className="max-w-3xl mx-auto text-center space-y-6">
               {/* Common Description */}
               <div>
-                <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
+                <p className="font-paragraph text-secondary-foreground text-2xl font-semibold leading-relaxed">
                   대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
                 </p>
               </div>
