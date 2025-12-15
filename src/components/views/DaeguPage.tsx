@@ -301,9 +301,9 @@ export default function DaeguPage({ regionName = '대구', regionDescription }: 
 
               {/* Regional Description */}
               <div>
-                <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
-                  대구 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
-                </p>
+                <h2 className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
+                  {regionName} 지역 전문 크레인 서비스
+                </h2>
               </div>
             </div>
           </motion.div>
