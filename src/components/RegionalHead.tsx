@@ -20,7 +20,7 @@ export const RegionalHead = ({
   phone,
   url,
   ogImage = "https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png",
-  areaServed = ["KR"],
+  areaServed = [],
   canonical,
 }: RegionalHeadProps) => {
   // 지역명에 맞게 자동으로 소개 문구 생성
