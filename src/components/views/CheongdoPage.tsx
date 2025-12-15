@@ -288,7 +288,7 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h1 className="text-4xl font-heading font-bold mb-12 text-center">{regionName}</h1>
+            <h2 className="text-4xl font-heading font-bold mb-12 text-center">{regionName}</h2>
             
             {/* Centered text content */}
             <div className="max-w-3xl mx-auto text-center space-y-6">
