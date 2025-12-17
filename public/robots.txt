@@ -1,24 +1,24 @@
-# Robots.txt - SEO Configuration
+# robots.txt - SEO Configuration (Recommended)
 
-# 기본 규칙
 User-agent: *
 Allow: /
-Allow: /sitemap.xml$
-Allow: /gyeongsan
-Allow: /daegu
-Allow: /gyeongju
-Allow: /cheongdo
-Allow: /gunwi
-Allow: /yeongcheon
 
+# 관리자/비공개/API 차단
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
+
+# 불필요 파라미터(라이트박스/정렬/필터) 차단
 Disallow: /*?lightbox=
 Disallow: /*?*sort=
 Disallow: /*?*filter=
-Disallow: /*.json$
-Disallow: /*.xml$   # 다른 XML 크롤링 제한 (단, sitemap.xml은 예외)
+
+# ✅ 중요: .xml 전체 차단은 하지 말 것 (sitemap.xml까지 영향 가능)
+# Disallow: /*.xml$  (삭제)
+
+# Sitemap (절대경로)
+Sitemap: https://www.daehancargocrane.com/sitemap.xml
+
 
 # Google
 User-agent: Googlebot
@@ -45,10 +45,10 @@ Allow: /
 
 # 악성/과도한 봇 제한
 User-agent: AhrefsBot
+Disallow: /
+
 User-agent: SemrushBot
+Disallow: /
+
 User-agent: DotBot
 Disallow: /
-Crawl-delay: 10
-
-# Sitemap 절대경로(정식 도메인)
-Sitemap: https://www.daehancargocrane.com/sitemap.xml
