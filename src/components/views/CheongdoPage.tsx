@@ -126,10 +126,10 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
           BaseCrudService.getAll<Services>('services'),
           BaseCrudService.getAll<CompanyStrengths>('companystrengths')
         ]);
-        
+
         const sortedServices = servicesData.items.sort((a, b) => (a.displayOrder || 0) - (b.displayOrder || 0));
         const sortedStrengths = strengthsData.items.sort((a, b) => (a.priorityOrder || 0) - (b.priorityOrder || 0));
-        
+
         setServices(sortedServices);
         setStrengths(sortedStrengths);
       } catch (error) {
@@ -226,20 +226,14 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
     const diff = touchStartX.current - touchEndX.current;
 
     if (Math.abs(diff) > swipeThreshold) {
-      if (diff > 0) {
-        handleNextImage();
-      } else {
-        handlePrevImage();
-      }
+      if (diff > 0) handleNextImage();
+      else handlePrevImage();
     }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'ArrowLeft') {
-      handlePrevImage();
-    } else if (e.key === 'ArrowRight') {
-      handleNextImage();
-    }
+    if (e.key === 'ArrowLeft') handlePrevImage();
+    else if (e.key === 'ArrowRight') handleNextImage();
   };
 
   return (
@@ -271,7 +265,8 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
             className="text-white font-geotica-w01-four-open font-normal whitespace-nowrap text-base mt-[15px] mr-0 mb-8 ml-0"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.5 } }}
-            dir="ltr">
+            dir="ltr"
+          >
             믿을 수 있는 중량물 운송 및 장비 연계 서비스
           </motion.p>
         </div>
@@ -288,27 +283,26 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
+            {/* ✅ h1 중복 방지: h2로 변경 */}
             <h2 className="text-4xl font-heading font-bold mb-12 text-center">{regionName}</h2>
-            
-            {/* Centered text content */}
+
             <div className="max-w-3xl mx-auto text-center space-y-6">
-              {/* Common Description */}
               <div>
                 <p className="font-paragraph text-secondary-foreground text-2xl font-semibold leading-relaxed">
                   대한카고크레인은 중량물, 산업 장비, 건설 자재 운송 전문 기업입니다.
                 </p>
               </div>
 
-              {/* Regional Description */}
+              {/* ✅ regionDescription props 실제 반영 */}
               <div>
                 <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
-                  청도 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.
+                  {regionDescription ??
+                    '청도 크레인은 지역의 다양한 산업 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.'}
                 </p>
               </div>
             </div>
           </motion.div>
         </div>
-        {/* Gradient transition to next section */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
       </section>
 
@@ -329,45 +323,49 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {displayServices.slice(0, 4).map((service, index) => {
-              const IconComponent = service.icon || defaultServices[index]?.icon || Truck;
-              return (
-                <motion.div
-                  key={service._id || index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="bg-background border-secondary/20 hover:border-primary/50 transition-colors h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-4">
-                        <Image
-                          src={(() => {
-                            const providedImages = [
-                              'https://static.wixstatic.com/media/6820d4_9d1871c95c094a8183560db136be62d8~mv2.png',
-                              'https://static.wixstatic.com/media/6820d4_f2e0c7582196418a9762d50bafbce630~mv2.png',
-                              'https://static.wixstatic.com/media/6820d4_69cc42045f66443da1ab80d83447cc7b~mv2.png',
-                              'https://static.wixstatic.com/media/6820d4_f7cd85d436394680a31c4ed9fcf1d5ab~mv2.png'
-                            ];
-                            return providedImages[index] || service.image || defaultServices[index]?.image || 'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=default-service-icon';
-                          })()}
-                          alt={service.title || defaultServices[index]?.title || '서비스 이미지'}
-                          className="w-16 h-16 mx-auto object-contain"
-                          width={64}
-                        />
-                      </div>
-                      <h3 className="text-xl font-heading font-semibold mb-3">
-                        {service.title || defaultServices[index]?.title}
-                      </h3>
-                      <p className="font-paragraph text-secondary-foreground">
-                        {service.shortDescription || service.description || defaultServices[index]?.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+            {displayServices.slice(0, 4).map((service, index) => (
+              <motion.div
+                key={service._id || index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-background border-secondary/20 hover:border-primary/50 transition-colors h-full">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4">
+                      <Image
+                        src={(() => {
+                          const providedImages = [
+                            'https://static.wixstatic.com/media/6820d4_9d1871c95c094a8183560db136be62d8~mv2.png',
+                            'https://static.wixstatic.com/media/6820d4_f2e0c7582196418a9762d50bafbce630~mv2.png',
+                            'https://static.wixstatic.com/media/6820d4_69cc42045f66443da1ab80d83447cc7b~mv2.png',
+                            'https://static.wixstatic.com/media/6820d4_f7cd85d436394680a31c4ed9fcf1d5ab~mv2.png'
+                          ];
+                          return (
+                            providedImages[index] ||
+                            (service as any).image ||
+                            (defaultServices as any)[index]?.image ||
+                            'https://static.wixstatic.com/media/6820d4_c9881f26e2eb4484af8fae344801a956~mv2.png?id=default-service-icon'
+                          );
+                        })()}
+                        alt={(service as any).title || (defaultServices as any)[index]?.title || '서비스 이미지'}
+                        className="w-16 h-16 mx-auto object-contain"
+                        width={64}
+                      />
+                    </div>
+                    <h3 className="text-xl font-heading font-semibold mb-3">
+                      {(service as any).title || (defaultServices as any)[index]?.title}
+                    </h3>
+                    <p className="font-paragraph text-secondary-foreground">
+                      {(service as any).shortDescription ||
+                        (service as any).description ||
+                        (defaultServices as any)[index]?.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -447,7 +445,7 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
               className="max-w-[calc(100vw-2rem)] max-h-[calc(100vh-2rem)] object-contain rounded-lg"
               width={1200}
             />
-            
+
             {selectedImageIndex > 0 && (
               <motion.button
                 onClick={(e) => {
@@ -511,44 +509,43 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {displayStrengths.slice(0, 3).map((strength, index) => {
-              const IconComponent = strength.icon || defaultStrengths[index]?.icon || Shield;
-              return (
-                <motion.div
-                  key={strength._id || index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  viewport={{ once: true }}
-                >
-                  <Card className="bg-dark-gray border-secondary/20 hover:border-primary/50 transition-colors h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="mb-6">
-                        <Image
-                          src={(() => {
-                            const providedImages = [
-                              'https://static.wixstatic.com/media/6820d4_85d12eef1b2e4ef2bc301c5dac2433fa~mv2.png',
-                              'https://static.wixstatic.com/media/6820d4_0ea4fc30b5a44fa38bfee471295e4b81~mv2.png',
-                              'https://static.wixstatic.com/media/6820d4_e2bfc3695552481a9f0815e62b09bc51~mv2.png'
-                            ];
-                            return providedImages[index] || strength.iconImage || 'https://static.wixstatic.com/media/6820d4_c07bcbd2a534420dae7f7da5d9f59354~mv2.png?originWidth=128&originHeight=128';
-                          })()}
-                          alt={strength.title || defaultStrengths[index]?.title || '강점 아이콘'}
-                          className="w-20 h-20 mx-auto object-contain"
-                          width={80}
-                        />
-                      </div>
-                      <h3 className="text-2xl font-heading font-semibold mb-4">
-                        {strength.title || defaultStrengths[index]?.title}
-                      </h3>
-                      <p className="font-paragraph text-secondary-foreground text-lg">
-                        {strength.shortDescription || strength.detailedDescription || defaultStrengths[index]?.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              );
-            })}
+            {displayStrengths.slice(0, 3).map((strength, index) => (
+              <motion.div
+                key={strength._id || index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <Card className="bg-dark-gray border-secondary/20 hover:border-primary/50 transition-colors h-full">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-6">
+                      <Image
+                        src={(() => {
+                          const providedImages = [
+                            'https://static.wixstatic.com/media/6820d4_85d12eef1b2e4ef2bc301c5dac2433fa~mv2.png',
+                            'https://static.wixstatic.com/media/6820d4_0ea4fc30b5a44fa38bfee471295e4b81~mv2.png',
+                            'https://static.wixstatic.com/media/6820d4_e2bfc3695552481a9f0815e62b09bc51~mv2.png'
+                          ];
+                          return providedImages[index] || (strength as any).iconImage || 'https://static.wixstatic.com/media/6820d4_c07bcbd2a534420dae7f7da5d9f59354~mv2.png?originWidth=128&originHeight=128';
+                        })()}
+                        alt={(strength as any).title || (defaultStrengths as any)[index]?.title || '강점 아이콘'}
+                        className="w-20 h-20 mx-auto object-contain"
+                        width={80}
+                      />
+                    </div>
+                    <h3 className="text-2xl font-heading font-semibold mb-4">
+                      {(strength as any).title || (defaultStrengths as any)[index]?.title}
+                    </h3>
+                    <p className="font-paragraph text-secondary-foreground text-lg">
+                      {(strength as any).shortDescription ||
+                        (strength as any).detailedDescription ||
+                        (defaultStrengths as any)[index]?.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-dark-gray pointer-events-none"></div>
@@ -580,8 +577,8 @@ export default function CheongdoPage({ regionName = '청도', regionDescription 
             >
               <Phone className="w-12 h-12 mx-auto text-primary mb-4 fill-color-11" />
               <h3 className="text-xl font-heading font-semibold mb-2">연락처</h3>
-              <a 
-                href="tel:010-2332-4822" 
+              <a
+                href="tel:010-2332-4822"
                 className="text-2xl font-paragraph text-primary hover:text-primary/80 transition-colors"
               >
                 010-2332-4822
