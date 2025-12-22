@@ -24,7 +24,7 @@ export const RegionalHead = ({
   canonical,
 }: RegionalHeadProps) => {
 
-  const fullTitle = `${regionTitle} | 삼다8476대한크레인, 대한카고크레인`;
+  const fullTitle = `${regionTitle} 크레인 | 삼다8476대한크레인, 대한카고크레인`;
 
   const description =
     `${regionName} 크레인, ${regionName} 카고크레인, ` +
