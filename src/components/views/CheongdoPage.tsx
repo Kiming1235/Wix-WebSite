@@ -27,16 +27,104 @@ export default function DaeguPage({
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
-  // 청도 지역 갤러리 (원하면 교체 가능)
+  // 청도 지역 갤러리
   const galleryImages = [
-    { src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg', alt: '청도 크레인 작업 현장 1' },
-    { src: 'https://static.wixstatic.com/media/6820d4_a7c6fd8325564b148b6da8f30ebb37be~mv2.jpg', alt: '청도 크레인 작업 현장 2' },
-    { src: 'https://static.wixstatic.com/media/6820d4_658942be47c843f09ee467b874a84f09~mv2.jpg', alt: '청도 크레인 작업 현장 3' },
-    { src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg', alt: '청도 크레인 작업 현장 4' },
-    { src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg', alt: '청도 크레인 작업 현장 5' },
-    { src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg', alt: '청도 크레인 작업 현장 6' },
-    { src: 'https://static.wixstatic.com/media/6820d4_d9967036235e430089fc18621661705e~mv2.jpg', alt: '청도 크레인 작업 현장 7' },
-    { src: 'https://static.wixstatic.com/media/6820d4_5302d235bca14224979f68d0a4df5d05~mv2.jpg', alt: '청도 크레인 작업 현장 8' }
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_56cd0a9079a8496cbb8c6edadc705a7f~mv2.jpeg',
+      alt: '청도 크레인 작업 - 건설 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_6cfe2e0520664c2f857c1ae73d7fbeea~mv2.jpg',
+      alt: '청도 크레인 작업 현장 1'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a7c6fd8325564b148b6da8f30ebb37be~mv2.jpg',
+      alt: '청도 크레인 작업 현장 2'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a82e1c0f6008438da039f08ba1155f90~mv2.jpg',
+      alt: '청도 크레인 작업 현장 3'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_658942be47c843f09ee467b874a84f09~mv2.jpg',
+      alt: '청도 크레인 작업 현장 4'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_7d5912f902ed458a9ab081d1f54e1ba2~mv2.jpg',
+      alt: '청도 크레인 작업 현장 5'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_baa57dccb97142599f3a5ef455ba392a~mv2.jpg',
+      alt: '청도 크레인 작업 현장 6'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_226bebe0ea604698958b4f3ddf87daa7~mv2.jpg',
+      alt: '청도 크레인 작업 현장 7'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_d9967036235e430089fc18621661705e~mv2.jpg',
+      alt: '청도 크레인 작업 현장 8'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_5302d235bca14224979f68d0a4df5d05~mv2.jpg',
+      alt: '청도 크레인 작업 현장 9'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_4b4a4f17c36b42eaad73d8c14d83431d~mv2.jpg',
+      alt: '청도 크레인 작업 현장 10'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_814daae2f8cf472aa17d385ef62bc3c8~mv2.jpg',
+      alt: '청도 크레인 작업 현장 - 건설 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c58c26e1d39548328222b2aa54cce8c1~mv2.jpg',
+      alt: '청도 크레인 자재 운반 작업 - 석재 운송'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_4a76c5a7343042018acb92e831ea50f7~mv2.jpg',
+      alt: '청도 크레인 대형 석재 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a6d63a2f9fe04eb6b908f536f37d9192~mv2.jpeg',
+      alt: '청도 크레인 작업 - 중량물 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c6e57b6001b4421eb9eceda11a24c1fa~mv2.jpeg',
+      alt: '청도 크레인 산악 지역 작업 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_68fa81b3d0fe42ae9e231b51b65cba78~mv2.jpeg',
+      alt: '청도 크레인 크레인 타워 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_9e9f78e30ffa49b5b140a42f2773aba0~mv2.jpeg',
+      alt: '청도 크레인 건설 현장 자재 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_d11cf66412b9475e899f7e164bcd3014~mv2.jpeg',
+      alt: '청도 크레인 대형 목재 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_9a63e1839fb946c2bcb64a1453e8e7cd~mv2.jpeg',
+      alt: '청도 크레인 도시 지역 크레인 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_c52fea20028348c79d6e77d0477f6e45~mv2.jpeg',
+      alt: '청도 크레인 파이프 운반 작업'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_a2b6bca564e64ba98734f824aaee699d~mv2.jpeg',
+      alt: '청도 크레인 실내 작업 현장'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_61be87a72ed84a719f5c68b708c99edb~mv2.jpeg',
+      alt: '청도 크레인 산악 지역 중량물 운반'
+    },
+    {
+      src: 'https://static.wixstatic.com/media/6820d4_021614c357984edab2601297a18c8145~mv2.jpeg',
+      alt: '청도 크레인 작업 - 정밀 운반'
+    }
   ];
 
   useEffect(() => {
