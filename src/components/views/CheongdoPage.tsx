@@ -163,7 +163,7 @@ export default function DaeguPage({
               </p>
               <p className="font-paragraph text-secondary-foreground text-lg leading-relaxed">
                 {regionDescription ??
-                  '청도 크레인은 도시 및 산업 밀집 지역의 다양한 현장에서 중량물 운송, 건설 자재 운반, 산업 장비 이전 등 맞춤형 솔루션을 제공하고 있습니다.'}
+                  '각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 경산 크레인, 경주 크레인, 대구 크레인, 구미 크레인, 성주 크레인 등 지역별 전문 장비를 활용한 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다.'}
               </p>
             </div>
           </motion.div>
