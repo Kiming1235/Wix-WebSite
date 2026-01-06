@@ -17,7 +17,7 @@ export interface CompanyStrengths {
   shortDescription?: string;
   /** @wixFieldType text */
   detailedDescription?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   iconImage?: string;
   /** @wixFieldType number */
   priorityOrder?: number;
@@ -38,7 +38,7 @@ export interface Services {
   shortDescription?: string;
   /** @wixFieldType text */
   description?: string;
-  /** @wixFieldType image - Contains image URL, render with <Image> component, NOT as text */
+  /** @wixFieldType image */
   image?: string;
   /** @wixFieldType text */
   slug?: string;
