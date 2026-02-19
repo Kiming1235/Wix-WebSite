@@ -41,3 +41,10 @@ docs/*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Local sensitive/binary files
+tmp_chrome_history_copy.db
+certs/
+*.pem
+*.crt
+*.key
