@@ -1,0 +1,27 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import HomePage from '@/components/views/HomePage';
+import { Head } from '@/components/Head';
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <Head />
+  </head>
+  <body>
+    <div class="min-h-screen bg-background">
+      <Header currentPath="/" />
+      <main class="pt-20">
+        <HomePage client:load />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '@/styles/global.css';
+  @import '@/styles/fonts.css';
+</style>

@@ -1,0 +1,38 @@
+---
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import GunwiPage from '@/components/views/GunwiPage';
+import { RegionalHead } from '@/components/RegionalHead';
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <RegionalHead 
+      regionName="군위"
+      regionTitle="군위 크레인"
+      keywords="군위 크레인, 군위 카고크레인, 군위 중량물 운송, 군위 건설 자재 운반"
+      streetAddress="군위군 군위읍 읍내로 789"
+      addressRegion="군위군"
+      phone="010-2332-4822"
+      url="https://www.daehancargocrane.com/gunwi"
+      canonical="https://www.daehancargocrane.com/gunwi"
+      ogImage="https://static.wixstatic.com/media/6820d4_b8bb9e74216a45bda96bf7cfb92afadd~mv2.png"
+      areaServed={["군위읍", "의흥면", "부계면", "소보면", "고로면", "삼국유사면"]}
+    />
+  </head>
+  <body>
+    <div class="min-h-screen bg-background">
+      <Header currentPath="/gunwi" />
+      <main class="pt-20">
+        <GunwiPage client:load regionName="회사소개" regionDescription="각 현장의 특성과 요구사항을 정확히 파악하여 최적화된 맞춤형 솔루션을 제공하며, 경산 크레인, 경주 크레인, 대구 크레인, 구미 크레인, 성주 크레인 등 지역별 전문 장비를 활용한 안전하고 효율적인 운송 서비스를 통해 고객의 성공적인 프로젝트 완수를 지원합니다." />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  @import '@/styles/global.css';
+  @import '@/styles/fonts.css';
+</style>

@@ -1,0 +1,54 @@
+# robots.txt - SEO Configuration (Recommended)
+
+User-agent: *
+Allow: /
+
+# 관리자/비공개/API 차단
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# 불필요 파라미터(라이트박스/정렬/필터) 차단
+Disallow: /*?lightbox=
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# ✅ 중요: .xml 전체 차단은 하지 말 것 (sitemap.xml까지 영향 가능)
+# Disallow: /*.xml$  (삭제)
+
+# Sitemap (절대경로)
+Sitemap: https://www.daehancargocrane.com/sitemap.xml
+
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Naver (국내)
+User-agent: Yeti
+Allow: /
+
+# 악성/과도한 봇 제한
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
